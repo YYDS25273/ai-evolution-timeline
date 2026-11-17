@@ -262,7 +262,12 @@
     "Wikipedia｜AlphaGo",
     "https://en.wikipedia.org/wiki/AlphaGo"
    ]
-  ]
+  ],
+  "img": {
+   "src": "assets/events/alphago.svg",
+   "alt": "AlphaGo 围棋对局示意",
+   "credit": "本项目绘制"
+  }
  },
  {
   "dt": "2016-05-18",
@@ -336,7 +341,12 @@
     "arXiv｜Attention Is All You Need",
     "https://arxiv.org/abs/1706.03762"
    ]
-  ]
+  ],
+  "img": {
+   "src": "assets/events/transformer.svg",
+   "alt": "Transformer 注意力矩阵示意",
+   "credit": "本项目绘制"
+  }
  },
  {
   "dt": "2017-10-18",
@@ -584,7 +594,12 @@
     "Nature｜Highly accurate protein structure prediction with AlphaFold",
     "https://www.nature.com/articles/s41586-021-03819-2"
    ]
-  ]
+  ],
+  "img": {
+   "src": "assets/events/alphafold.svg",
+   "alt": "AlphaFold 蛋白质结构预测示意",
+   "credit": "本项目绘制"
+  }
  },
  {
   "dt": "2021-01-05",
@@ -810,6 +825,11 @@
     "OpenAI｜Introducing ChatGPT",
     "https://openai.com/index/chatgpt/"
    ]
-  ]
+  ],
+  "img": {
+   "src": "assets/events/chatgpt.svg",
+   "alt": "ChatGPT 对话界面示意",
+   "credit": "本项目绘制"
+  }
  }
 ]

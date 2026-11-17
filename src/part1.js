@@ -95,7 +95,12 @@
     "Wikipedia｜Computing Machinery and Intelligence",
     "https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence"
    ]
-  ]
+  ],
+  "img": {
+   "src": "assets/events/turing.svg",
+   "alt": "图灵测试与早期计算机示意",
+   "credit": "本项目绘制"
+  }
  },
  {
   "dt": "1951-05-01",

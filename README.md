@@ -13,6 +13,7 @@
 - **可量化的结果**：企业 AI 支出 1768 亿美元（同比 5.4 倍）、智能体占 80% token、编码智能体让合并 PR +24%、AI 设计的噬菌体首次用于人体治疗、3.7 万智能体发现肺癌候选药、FDA 单月批准 24 个 AI 医疗器械。
 - **你点名的节点**：OpenAI 于 2026 年 10 月 7 日公开 722 篇数学手稿——发布时为 722 篇 / 372 个成果族，后经撤回与修订，截至 2026-11-17 为 **721 篇 / 373 个成果族**，约 42% 的顶线结果有 Lean 形式化。
 - **悬浮立体视觉**：实色深色卡片 + 接触/环境/深投影三层阴影；悬停抬升并跟随鼠标 3D 倾斜；工具栏、迷你地图和详情抽屉都是实色浮层，不使用实时毛玻璃。
+- **本地示意图**：每个详情抽屉有一张领域主题图；图灵、AlphaGo、Transformer、AlphaFold、ChatGPT、OpenAI 722、LEAP 71、GE 冲压发动机 8 个重点事件有专属示意图，可点击放大。
 
 ## 交互
 
@@ -54,7 +55,8 @@ python -m http.server 8899
 
 ```bash
 node build.mjs          # 由 src/ 生成 index.html 与中文副本
-node scripts/validate.mjs   # 校验字段、日期、来源、标题唯一性、节点数
+node scripts/validate.mjs   # 校验字段、日期、来源、标题唯一性、节点数、图片文件
+node scripts/generate-visuals.mjs  # 重新生成 assets/ 下的示意图
 ```
 
 `src/template.html` 是页面骨架与交互逻辑，`src/part1.js … part6.js` 是精选事件数据，`src/part-auto.js` 是自动收录数据；构建时把事件数组内联进 HTML，页面运行时不发任何网络请求。
@@ -69,6 +71,9 @@ node scripts/validate.mjs   # 校验字段、日期、来源、标题唯一性�
 ├─ build.mjs                 # 构建脚本
 ├─ scripts/validate.mjs      # 数据校验
 ├─ scripts/auto-update.mjs   # 自动搜索并写入候选
+├─ scripts/generate-visuals.mjs # 生成本地 SVG 示意图
+├─ assets/fields/            # 12 张领域主题图
+├─ assets/events/            # 8 张重点事件示意图
 ├─ .github/workflows/
 │  └─ auto-update.yml        # 每日自动抓取 + 开 PR
 ├─ src/

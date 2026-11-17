@@ -37,7 +37,12 @@
     "LEAP 71｜News index",
     "https://leap71.com/news/"
    ]
-  ]
+  ],
+  "img": {
+   "src": "assets/events/leap71.svg",
+   "alt": "LEAP 71 气动塞式火箭发动机示意",
+   "credit": "本项目绘制"
+  }
  },
  {
   "dt": "2026-05-19",
@@ -77,7 +82,12 @@
     "Aerospace America｜Adding AI to aircraft design",
     "https://aerospaceamerica.aiaa.org/features/adding-ai-to-aircraft-design/"
    ]
-  ]
+  ],
+  "img": {
+   "src": "assets/events/ge-ramjet.svg",
+   "alt": "GE 高超声速冲压发动机示意",
+   "credit": "本项目绘制"
+  }
  },
  {
   "dt": "2026-01-20",
@@ -925,7 +935,12 @@
     "科普中国｜722篇论文与准黎曼猜想",
     "https://cloud.kepuchina.cn/h5/detail?id=7507909621242564608"
    ]
-  ]
+  ],
+  "img": {
+   "src": "assets/events/openai-math.svg",
+   "alt": "OpenAI 722 篇数学手稿示意",
+   "credit": "本项目绘制"
+  }
  },
  {
   "dt": "2026-10-12",

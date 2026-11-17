@@ -85,7 +85,15 @@ if(!builtMatch){
       if(!Array.isArray(pair) || pair.length !== 2) problems.push(`${where}: src[${j}] must be [label,url]`);
       else if(!/^https?:\/\//i.test(pair[1])) problems.push(`${where}: src[${j}] bad url ${pair[1]}`);
     });
+    if(e.img){
+      if(!e.img.src || !/^assets\/.+\.svg$/i.test(e.img.src)) problems.push(`${where}: img.src must be assets/*.svg`);
+      else if(!fs.existsSync(path.join(root,e.img.src))) problems.push(`${where}: img not found ${e.img.src}`);
+      if(!e.img.alt) problems.push(`${where}: img.alt missing`);
+    }
   });
+}
+for(const f of FIELDS){
+  if(!fs.existsSync(path.join(root,"assets","fields",f+".svg"))) problems.push(`missing field visual assets/fields/${f}.svg`);
 }
 
 const byEra = {}; events.forEach(e=>byEra[e.era]=(byEra[e.era]||0)+1);
