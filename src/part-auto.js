@@ -77,5 +77,49 @@
   ]
  ],
  "auto": true
+},
+{
+ "dt": "2026-11-15",
+ "d": "2026.11.15",
+ "era": "agent",
+ "cat": "science",
+ "t": "Multiaccuracy as an Error Benchmark for Learning with Distribution Shift",
+ "org": "arXiv",
+ "s": "Agnostic learning has a well-developed theory of computational and statistical complexity. For learning with distribution shift, even the choice of an appropriate error benchmark remains challenging. Testable learning wi…",
+ "x": "自动收录自 arXiv 最新论文列表（http://arxiv.org/abs/2611.19701v1）。论文尚未经过同行评审或人工事实核查，合并 PR 前请复核摘要、结论与来源。",
+ "tags": [
+  "自动收录",
+  "arXiv",
+  "论文"
+ ],
+ "src": [
+  [
+   "arXiv 摘要",
+   "http://arxiv.org/abs/2611.19701v1"
+  ]
+ ],
+ "auto": true
+},
+{
+ "dt": "2026-11-15",
+ "d": "2026.11.15",
+ "era": "agent",
+ "cat": "science",
+ "t": "Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both",
+ "org": "arXiv",
+ "s": "LLM agents operating repeatedly in the same environment, such as a code repository, a database, or an application suite, encounter tasks that share latent structure. Experience can reveal this structure, allowing agents …",
+ "x": "自动收录自 arXiv 最新论文列表（http://arxiv.org/abs/2611.19700v1）。论文尚未经过同行评审或人工事实核查，合并 PR 前请复核摘要、结论与来源。",
+ "tags": [
+  "自动收录",
+  "arXiv",
+  "论文"
+ ],
+ "src": [
+  [
+   "arXiv 摘要",
+   "http://arxiv.org/abs/2611.19700v1"
+  ]
+ ],
+ "auto": true
 }
 ]
