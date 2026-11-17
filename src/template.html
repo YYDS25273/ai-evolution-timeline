@@ -1000,7 +1000,7 @@ function startAutoplay(){
   const tick=(ts)=>{
     if(!canAutoplay()){ stopAutoplay(); return; }
     if(!autoLast){ autoLast=ts; autoStart=ts; }
-    const dt=Math.min((ts-autoLast)/1000,0.05);
+    const dt=Math.min((ts-autoLast)/1000,0.25);
     autoLast=ts;
     const maxNow=scroller.scrollWidth-scroller.clientWidth;
     const remaining=maxNow-scroller.scrollLeft;
