@@ -1146,20 +1146,30 @@ function filtered(){
 
 /* ---------- idle autoplay ---------- */
 const IDLE_MS=5000, AUTO_SPEED=45, AUTO_RAMP_MS=1500, AUTO_TAIL_PX=200; // px/s, ease-in/out
-let idleTimer=null, autoRaf=null, autoLast=0, autoStart=0;
+let idleTimer=null, autoRaf=null, autoLast=0, autoStart=0, autoOffset=0;
 const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function canAutoplay(){
   return !reduceMotion.matches && !document.hidden && !state.current && !$("#about").classList.contains("on");
 }
+function applyAutoOffset(){
+  track.style.transform = autoOffset ? `translate3d(${-autoOffset}px,0,0)` : "";
+}
 function stopAutoplay(){
   if(autoRaf) cancelAnimationFrame(autoRaf);
   autoRaf=null; autoLast=0; autoStart=0;
+  if(autoOffset){
+    scroller.scrollLeft = autoOffset;
+    autoOffset = 0;
+  }
+  track.style.transform = "";
+  track.style.willChange = "";
 }
 function startAutoplay(){
   if(autoRaf || !canAutoplay()) return;
   const max=scroller.scrollWidth-scroller.clientWidth;
   if(max<=0 || scroller.scrollLeft>=max-1) return;
+  autoOffset = scroller.scrollLeft;
   autoLast=0; autoStart=0;
   const tick=(ts)=>{
     if(!canAutoplay()){ stopAutoplay(); return; }
@@ -1167,15 +1177,20 @@ function startAutoplay(){
     const dt=Math.min((ts-autoLast)/1000,0.25);
     autoLast=ts;
     const maxNow=scroller.scrollWidth-scroller.clientWidth;
-    const remaining=maxNow-scroller.scrollLeft;
-    if(remaining<=1){ scroller.scrollLeft=maxNow; stopAutoplay(); return; }
+    const remaining=maxNow-autoOffset;
+    if(remaining<=1){ autoOffset=maxNow; applyAutoOffset(); syncView(); stopAutoplay(); return; }
     const ramp=Math.min(1,(ts-autoStart)/AUTO_RAMP_MS);
     const tail=Math.min(1,remaining/AUTO_TAIL_PX);
     const speed=AUTO_SPEED*ramp*Math.max(0.12,tail);
-    scroller.scrollLeft=Math.min(maxNow, scroller.scrollLeft+speed*dt);
+    autoOffset=Math.min(maxNow, autoOffset+speed*dt);
+    applyAutoOffset();
+    syncView();
     autoRaf=requestAnimationFrame(tick);
   };
   autoRaf=requestAnimationFrame(tick);
+  scroller.scrollLeft = 0;
+  applyAutoOffset();
+  track.style.willChange = "transform";
 }
 function resetIdle(){
   stopAutoplay();
@@ -1193,6 +1208,7 @@ if(reduceMotion.addEventListener) reduceMotion.addEventListener("change",()=>red
 /* ---------- layout / render ---------- */
 let layoutCache={list:[],xs:[],step:0,cardW:0,total:0};
 function render(animate=true){
+  stopAutoplay();
   const list=filtered();
   const {w:cardW,g:gap}=ZOOMS[state.zoom];
   document.documentElement.style.setProperty("--cardW",cardW+"px");
@@ -1311,14 +1327,15 @@ function updateMinimap(){
   syncView();
 }
 function syncView(){
+  const offset=autoRaf?autoOffset:scroller.scrollLeft;
   const max=scroller.scrollWidth-scroller.clientWidth;
-  const ratio=max>0?scroller.scrollLeft/max:0;
+  const ratio=max>0?offset/max:0;
   const w=Math.max(6,Math.min(100,scroller.clientWidth/scroller.scrollWidth*100));
   mmView.style.width=w+"%";
   mmView.style.left=(ratio*(100-w))+"%";
   const {xs,list}=layoutCache;
   if(xs.length){
-    const center=scroller.scrollLeft+scroller.clientWidth/2;
+    const center=offset+scroller.clientWidth/2;
     let lo=0,hi=xs.length-1;
     while(lo<hi){const mid=(lo+hi)>>1; if(xs[mid]<center)lo=mid+1;else hi=mid;}
     const i=Math.min(Math.max(lo,0),xs.length-1);
