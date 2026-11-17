@@ -992,6 +992,17 @@ body::after{opacity:.025;mix-blend-mode:multiply}
 .extlink:hover{background:#eef2f9;color:#111827;border-color:rgba(23,35,58,.2)}
 .extlink.bili{background:#fff0f5;color:#b02a5b;border-color:#f0b8cc}.extlink.bili:hover{background:#ffe5ef;border-color:#e58cae}
 .extlink .dom{color:#7a8396}
+.card{height:calc(50% - 40px);max-height:340px}
+.card.above{bottom:calc(50% + 24px)}
+.card.below{top:calc(50% + 24px)}
+.card p{flex:1 1 auto;min-height:0;overflow:hidden}
+.card .note{flex:0 1 auto;min-height:0;overflow:hidden}
+.card .cfoot{flex:none}
+.year{z-index:20}
+@media (max-height:900px){
+  .card .note{display:none}
+  .card p{-webkit-line-clamp:4}
+}
 </style>
 </head>
 <body>
