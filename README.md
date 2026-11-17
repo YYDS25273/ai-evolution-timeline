@@ -9,7 +9,7 @@
 ## 亮点
 
 - **158 个精选节点 / 7 个时代 / 8 种类型 / 12 个领域**，覆盖思想理论、模型产品、科研突破、产业商业、算力基建、政策治理、应用社会、安全对齐。
-- **2025—2026 年 74 个节点（含自动收录）**：GPT-5.5、GPT-6 Astra、Gemini 4 Argon/Carbon、Claude Fable 5、Claude Opus 5、DeepSeek V4、Kimi K3、Qwen4-Max、GLM-5、Qwen3.5、Grok V9、Meta Muse 等。
+- **2025—2026 年 76 个节点（含自动收录）**：GPT-5.5、GPT-6 Astra、Gemini 4 Argon/Carbon、Claude Fable 5、Claude Opus 5、DeepSeek V4、Kimi K3、Qwen4-Max、GLM-5、Qwen3.5、Grok V9、Meta Muse 等。
 - **可量化的结果**：企业 AI 支出 1768 亿美元（同比 5.4 倍）、智能体占 80% token、编码智能体让合并 PR +24%、AI 设计的噬菌体首次用于人体治疗、3.7 万智能体发现肺癌候选药、FDA 单月批准 24 个 AI 医疗器械。
 - **你点名的节点**：OpenAI 于 2026 年 10 月 7 日公开 722 篇数学手稿——发布时为 722 篇 / 372 个成果族，后经撤回与修订，截至 2026-11-17 为 **721 篇 / 373 个成果族**，约 42% 的顶线结果有 Lean 形式化。
 - **macOS Liquid Glass 视觉**：半透明毛玻璃、高光内边缘、极光背景与指针跟随高光；详情、筛选和迷你地图都做成悬浮玻璃层。
