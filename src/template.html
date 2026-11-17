@@ -429,6 +429,23 @@ body::after{
   .card.above::before{bottom:-26px}
   .card.below::before{top:-26px}
 }
+@media (max-height:640px){
+  .card{padding:9px 10px 8px;gap:5px}
+  .card h3{font-size:12.5px;line-height:1.35}
+  .card p,.card.has-note p,.card:not(.has-note) p{font-size:10.8px;line-height:1.5;-webkit-line-clamp:2}
+  .card .note{display:none}
+  .card .cfoot{min-height:0}
+  .card .tags{display:none}
+  .card .key{display:none}
+  .chead .pill{font-size:8.5px;padding:1px 4px}
+  .date{font-size:9.5px}
+  .card .metric{font-size:10.5px}
+  .card .metric small{font-size:8px}
+}
+@media (max-height:600px){
+  .card .cfoot{display:none}
+  .band-sub{display:none}
+}
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
 }
