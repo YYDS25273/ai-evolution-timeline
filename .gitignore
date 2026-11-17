@@ -1,0 +1,6 @@
+.build-check.js
+node_modules/
+*.log
+Thumbs.db
+.DS_Store
+docs/superpowers/
