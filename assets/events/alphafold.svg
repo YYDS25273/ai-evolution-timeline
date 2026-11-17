@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img">
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#121d34"/><stop offset=".55" stop-color="#0a1220"/><stop offset="1" stop-color="#070b14"/>
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f4f7fc"/><stop offset="1" stop-color="#e8eff8"/>
   </linearGradient>
   <radialGradient id="glow" cx=".28" cy=".08" r=".9">
-    <stop offset="0" stop-color="#a6e37f" stop-opacity=".30"/><stop offset="1" stop-color="#a6e37f" stop-opacity="0"/>
+    <stop offset="0" stop-color="#4f9a2f" stop-opacity=".30"/><stop offset="1" stop-color="#4f9a2f" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="glow2" cx=".85" cy=".85" r=".7">
-    <stop offset="0" stop-color="#a6e37f" stop-opacity=".12"/><stop offset="1" stop-color="#a6e37f" stop-opacity="0"/>
+    <stop offset="0" stop-color="#4f9a2f" stop-opacity=".12"/><stop offset="1" stop-color="#4f9a2f" stop-opacity="0"/>
   </radialGradient>
   <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-    <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+    <path d="M48 0H0V48" fill="none" stroke="#1f2937" stroke-opacity=".06"/>
   </pattern>
   <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".58"/>
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity=".45"/>
   </linearGradient>
 </defs>
 <rect width="1200" height="520" fill="url(#bg)"/>
@@ -21,13 +21,13 @@
 <rect width="1200" height="520" fill="url(#glow2)"/>
 <rect width="1200" height="520" fill="url(#grid)"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<path d="M240 360c80-180 180-180 260 0s180 180 260 0 180-180 260 0" stroke="#a6e37f" stroke-opacity=".75" stroke-width="4"/>
-<path d="M240 360c80-180 180-180 260 0s180 180 260 0 180-180 260 0" stroke="#a6e37f" stroke-opacity=".18" stroke-width="12"/>
-<path d="M300 200c100 40 160 120 260 120s180-80 280-120" stroke="#a6e37f" stroke-opacity=".35" stroke-width="2"/>
-<g fill="#a6e37f" stroke="none">
+<path d="M240 360c80-180 180-180 260 0s180 180 260 0 180-180 260 0" stroke="#4f9a2f" stroke-opacity=".75" stroke-width="4"/>
+<path d="M240 360c80-180 180-180 260 0s180 180 260 0 180-180 260 0" stroke="#4f9a2f" stroke-opacity=".18" stroke-width="12"/>
+<path d="M300 200c100 40 160 120 260 120s180-80 280-120" stroke="#4f9a2f" stroke-opacity=".35" stroke-width="2"/>
+<g fill="#4f9a2f" stroke="none">
   <circle cx="300" cy="260" r="8"/><circle cx="380" cy="190" r="7"/><circle cx="460" cy="300" r="9"/><circle cx="560" cy="320" r="7"/><circle cx="660" cy="260" r="8"/><circle cx="760" cy="200" r="7"/><circle cx="860" cy="280" r="9"/>
 </g>
-<circle cx="900" cy="180" r="80" stroke="#a6e37f" stroke-opacity=".16" stroke-width="2" stroke-dasharray="4 10"/></g>
+<circle cx="900" cy="180" r="80" stroke="#4f9a2f" stroke-opacity=".16" stroke-width="2" stroke-dasharray="4 10"/></g>
 <rect width="1200" height="520" fill="url(#fade)"/>
-<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#a6e37f" fill-opacity=".72">AI TIMELINE / 2020 · ALPHAFOLD</text>
+<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#4f9a2f" fill-opacity=".72">AI TIMELINE / 2020 · ALPHAFOLD</text>
 </svg>

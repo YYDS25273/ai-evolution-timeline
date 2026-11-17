@@ -12,12 +12,12 @@
 <meta property="og:image" content="https://yyds25273.github.io/ai-evolution-timeline/preview.png">
 <meta property="og:image:alt" content="AI 发展史时间线预览">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#060912">
+<meta name="theme-color" content="#f3f6fb">
 <link rel="canonical" href="https://yyds25273.github.io/ai-evolution-timeline/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060912'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial,sans-serif' font-weight='700' text-anchor='middle' fill='%237c8cff'%3EAI%3C/text%3E%3C/svg%3E">
 <style>
 :root{
-  color-scheme:dark;
+  color-scheme:light;
   --bg:#060912;
   --bg2:#0a0f1e;
   --panel:rgba(15,21,38,.78);
@@ -879,6 +879,119 @@ body::after{opacity:.03}
 @media (prefers-reduced-motion:reduce){
   .card:hover,.card.below:hover,.card.above:hover{transform:none}
 }
+/* ================= Light Theme ================= */
+:root{
+  color-scheme:light;
+  --bg:#f2f5fb;--bg2:#e9eef8;--panel:#ffffff;--panel2:#f7f9fd;
+  --line:rgba(23,35,58,.10);--line2:rgba(23,35,58,.16);
+  --text:#172033;--muted:#4a5568;--dim:#6b7488;--accent:#4f5fd8;
+}
+body{
+  background:
+    radial-gradient(900px 600px at 50% -10%, rgba(90,110,220,.13), transparent 65%),
+    radial-gradient(700px 520px at 10% 20%, rgba(20,150,180,.07), transparent 70%),
+    radial-gradient(700px 520px at 90% 25%, rgba(190,80,140,.06), transparent 70%),
+    linear-gradient(180deg,#f6f8fd,#eef3fa 60%,#f5f7fc);
+  color:var(--text);
+}
+body::before{
+  background:
+    radial-gradient(900px 620px at 50% -8%, rgba(110,130,255,.10), transparent 64%),
+    linear-gradient(180deg,#f7f9fe,#eef3fa 60%,#f6f8fd);
+  filter:none;animation:none;transform:none;
+}
+body::after{opacity:.025;mix-blend-mode:multiply}
+::selection{background:rgba(79,95,216,.18);color:#111827}
+.topbar{
+  background:linear-gradient(180deg,#ffffff,#f6f8fd);
+  border:1px solid rgba(23,35,58,.10);
+  box-shadow:0 1px 2px rgba(23,35,58,.06),0 14px 34px -22px rgba(23,35,58,.28),inset 0 1px 0 #fff;
+}
+.filterbar{
+  background:linear-gradient(180deg,#fbfcff,#f3f6fc);
+  border:1px solid rgba(23,35,58,.09);
+  box-shadow:0 1px 2px rgba(23,35,58,.05),0 12px 26px -20px rgba(23,35,58,.22),inset 0 1px 0 #fff;
+}
+.logo{
+  background:linear-gradient(145deg,#6575e8,#4353c9);
+  border-color:rgba(255,255,255,.55);
+  box-shadow:0 8px 18px -8px rgba(60,80,200,.7),inset 0 1px 0 rgba(255,255,255,.5);
+}
+.brand h1{color:#111827}
+.brand p,.stat span,.flabel,.count,.hint{color:var(--dim)}
+.stat b{color:#111827}
+.search input{background:#fff;color:#172033;border-color:rgba(23,35,58,.14);box-shadow:inset 0 1px 2px rgba(23,35,58,.06)}
+.search input::placeholder{color:#8a93a6}
+.search input:focus{background:#fff;border-color:rgba(79,95,216,.55);box-shadow:0 0 0 3px rgba(79,95,216,.14),inset 0 1px 2px rgba(23,35,58,.04)}
+.search kbd{background:#f1f4fa;color:#6b7488;border-color:rgba(23,35,58,.12)}
+.zoom,.iconbtn,.chip{background:#f8fafd;color:#4a5568;border-color:rgba(23,35,58,.12);box-shadow:0 1px 2px rgba(23,35,58,.06),inset 0 1px 0 #fff}
+.zoom button{color:#5b667a}
+.zoom button.on{background:linear-gradient(180deg,#334066,#1f2a44);color:#fff;border-color:transparent;box-shadow:0 3px 10px -5px rgba(23,35,58,.5),inset 0 1px 0 rgba(255,255,255,.22)}
+.iconbtn:hover,.chip:hover{background:#eef2f9;color:#172033;border-color:rgba(23,35,58,.2)}
+.chip{color:#4a5568}
+.chip.on{background:linear-gradient(180deg,#334066,#1f2a44);color:#fff;border-color:transparent;box-shadow:0 4px 12px -6px rgba(23,35,58,.45),inset 0 1px 0 rgba(255,255,255,.18)}
+.axis{background:linear-gradient(90deg,transparent,rgba(23,35,58,.12) 8%,rgba(79,95,216,.35) 38%,rgba(194,71,127,.28) 68%,rgba(192,106,28,.34) 94%,transparent);box-shadow:0 0 0 1px rgba(23,35,58,.03),0 0 18px rgba(79,95,216,.10)}
+.band-label{color:#5b667a}.band-sub{color:rgba(70,85,110,.55)}.tick{background:rgba(70,85,110,.25)}
+.year{background:#fff;color:#4a5568;border-color:rgba(23,35,58,.12);box-shadow:0 2px 6px rgba(23,35,58,.12),inset 0 1px 0 #fff}
+.year.era-start{background:#1f2a44;color:#fff;border-color:transparent}
+.year.now{background:linear-gradient(180deg,#ffd58f,#f5a623);color:#2b1a04;border-color:transparent}
+.yearhud{background:#fff;color:#4a5568;border-color:rgba(23,35,58,.12);box-shadow:0 3px 10px -6px rgba(23,35,58,.25),inset 0 1px 0 #fff}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.9),transparent 30%),linear-gradient(180deg,#ffffff,#f8fafd);
+  border:1px solid rgba(23,35,58,.10);
+  box-shadow:0 1px 2px rgba(23,35,58,.08),0 10px 22px -12px rgba(23,35,58,.22),0 28px 60px -34px rgba(23,35,58,.28),inset 0 1px 0 #fff;
+}
+.card:hover{
+  background:linear-gradient(180deg,#fff,color-mix(in srgb,var(--c) 6%,#f7f9fd));
+  border-color:color-mix(in srgb,var(--c) 38%,rgba(23,35,58,.12));
+  box-shadow:0 2px 4px rgba(23,35,58,.08),0 18px 34px -14px rgba(23,35,58,.26),0 44px 80px -36px rgba(23,35,58,.32),0 0 0 1px color-mix(in srgb,var(--c) 20%,transparent),inset 0 1px 0 #fff;
+}
+.card.below:hover,.card.above:hover{background:linear-gradient(180deg,#fff,color-mix(in srgb,var(--c) 6%,#f7f9fd));border-color:color-mix(in srgb,var(--c) 38%,rgba(23,35,58,.12))}
+.card.featured{background:linear-gradient(180deg,color-mix(in srgb,var(--c) 9%,#fff),transparent 46%),linear-gradient(180deg,#fff,#f7f9fd);border-color:color-mix(in srgb,var(--c) 28%,rgba(23,35,58,.10))}
+.card.featured:hover{background:linear-gradient(180deg,color-mix(in srgb,var(--c) 13%,#fff),transparent 48%),linear-gradient(180deg,#fff,color-mix(in srgb,var(--c) 5%,#f7f9fd))}
+.card h3{color:#111827}.card p{color:#475569}
+.card .note{background:#f1f5fb;color:#5b667a;border-left-color:color-mix(in srgb,var(--c) 55%,transparent)}
+.card::before{background:linear-gradient(180deg,var(--c),rgba(23,35,58,.10))}
+.card.above::before{background:linear-gradient(0deg,rgba(23,35,58,.10),var(--c))}
+.card::after{box-shadow:0 0 0 3px #fff,0 0 12px var(--c)}
+.date{color:#647086}.pill{background:color-mix(in srgb,var(--c) 9%,#fff);border-color:color-mix(in srgb,var(--c) 28%,transparent);color:var(--c)}
+.tag{background:#f1f4fa;color:#5b667a;border-color:rgba(23,35,58,.07)}
+.field-tag{color:var(--fc);background:color-mix(in srgb,var(--fc) 9%,#fff);border-color:color-mix(in srgb,var(--fc) 30%,transparent)}
+.metric{color:var(--c)}.auto{color:#4a5568;border-color:rgba(23,35,58,.14);background:#f1f4fa}
+.key{color:#2b1a04;background:linear-gradient(180deg,#ffe3b8,var(--c))}
+.minimap{background:linear-gradient(180deg,#ffffff,#f5f8fd);border-color:rgba(23,35,58,.12);box-shadow:0 2px 6px -3px rgba(23,35,58,.2),0 18px 40px -24px rgba(23,35,58,.28),inset 0 1px 0 #fff}
+.mm-view{border-color:rgba(31,42,68,.55);background:rgba(31,42,68,.06);box-shadow:0 0 0 1px rgba(255,255,255,.7)}
+.minimap .mm-label{background:#fff;color:#6b7488}
+.hint kbd{background:#fff;color:#5b667a;border-color:rgba(23,35,58,.12)}
+.jump button{background:linear-gradient(180deg,#ffffff,#f3f6fc);color:#334155;border-color:rgba(23,35,58,.14);box-shadow:0 2px 6px -3px rgba(23,35,58,.2),0 14px 30px -20px rgba(23,35,58,.25),inset 0 1px 0 #fff}
+.jump button:hover{background:#eef2f9;color:#111827;border-color:rgba(23,35,58,.24)}
+.jump button.primary{background:linear-gradient(180deg,#ffd9a8,#f5a623);color:#2b1a04;border-color:transparent}
+.drawer{background:linear-gradient(180deg,#ffffff,#f8fafd);border-color:rgba(23,35,58,.12);box-shadow:-30px 30px 80px -40px rgba(23,35,58,.35),inset 0 1px 0 #fff}
+.drawer-head{border-bottom-color:rgba(23,35,58,.08)}.drawer-head h2{color:#111827}.drawer-head .sub{color:#6b7488}
+.drawer-close{background:#f1f4fa;color:#5b667a;border-color:rgba(23,35,58,.12)}.drawer-close:hover{background:#e8eef7;color:#111827}
+.drawer-body{scrollbar-color:rgba(23,35,58,.2) transparent}.drawer-body::-webkit-scrollbar-thumb{background:rgba(23,35,58,.18)}
+.prose{color:#334155}.prose.lead{color:#111827}
+.metric-box{background:#f7f9fd;border-color:rgba(23,35,58,.09)}.metric-box b{color:var(--c)}.metric-box span{color:#6b7488}
+.sec-title{color:#6b7488}
+.srclist a{color:#334155;border-color:rgba(23,35,58,.09);background:#f8fafd}
+.srclist a:hover{color:#111827;border-color:color-mix(in srgb,var(--c) 35%,rgba(23,35,58,.12));background:#eef2f9}
+.srclist a .dom{color:#7a8396}
+.drawer-tags span{background:#f1f4fa;color:#4a5568}
+.drawer-nav{background:#f8fafd;border-top-color:rgba(23,35,58,.08)}
+.drawer-nav button{background:#fff;color:#334155;border-color:rgba(23,35,58,.10)}.drawer-nav button:hover{background:#eef2f9;color:#111827}.drawer-nav button span{color:#7a8396}
+.scrim{background:rgba(23,35,58,.32);backdrop-filter:none}
+.about{background:rgba(23,35,58,.30)}
+.about-panel{background:linear-gradient(180deg,#ffffff,#f8fafd);border-color:rgba(23,35,58,.12);box-shadow:0 50px 110px -50px rgba(23,35,58,.4),inset 0 1px 0 #fff}
+.about-panel h2{color:#111827}.about-panel .lede,.about-panel .sec-title{color:#6b7488}
+.about-panel p{color:#475569}.about-panel strong{color:#111827}.about-panel li{color:#4a5568}.about-panel li b{color:#172033}
+.about-panel .close-about{background:#f1f4fa;color:#334155;border-color:rgba(23,35,58,.10)}
+.empty{color:#7a8396}
+.event-visual{background:#f8fafd;border-color:rgba(23,35,58,.09);box-shadow:0 10px 26px -18px rgba(23,35,58,.3),inset 0 1px 0 #fff}
+.event-visual .visual-cap{background:#f8fafd;color:#6b7488;border-top-color:rgba(23,35,58,.06)}
+.extlink{background:#f8fafd;color:#334155;border-color:rgba(23,35,58,.09)}
+.extlink:hover{background:#eef2f9;color:#111827;border-color:rgba(23,35,58,.2)}
+.extlink.bili{background:#fff0f5;color:#b02a5b;border-color:#f0b8cc}.extlink.bili:hover{background:#ffe5ef;border-color:#e58cae}
+.extlink .dom{color:#7a8396}
 </style>
 </head>
 <body>
@@ -982,36 +1095,36 @@ body::after{opacity:.03}
 <script>
 const ERAS = [
   {id:"dawn",   name:"奠基时代",       sub:"1943–1969", color:"#7c8cff", desc:"从神经元数学模型到“人工智能”命名"},
-  {id:"winter", name:"寒冬与专家系统", sub:"1970–1992", color:"#93a2c4", desc:"两次寒冬，专家系统的黄金年代"},
-  {id:"stat",   name:"统计学习前夜",   sub:"1993–2011", color:"#2fd6b0", desc:"核方法、深蓝与深度信念网络"},
-  {id:"deep",   name:"深度学习革命",   sub:"2012–2017", color:"#3fa9ff", desc:"AlexNet、AlphaGo 与 Transformer"},
-  {id:"llm",    name:"大模型时代",     sub:"2018–2022", color:"#a78bfa", desc:"预训练、缩放律与 ChatGPT"},
-  {id:"gen",    name:"生成式爆发",     sub:"2023–2024", color:"#ff7ab6", desc:"GPT-4、多模态与全球监管"},
-  {id:"agent",  name:"智能体与前沿竞赛", sub:"2025–2026", color:"#ffb057", desc:"推理模型、长程智能体与 AI 科学家"}
+  {id:"winter", name:"寒冬与专家系统", sub:"1970–1992", color:"#64748b", desc:"两次寒冬，专家系统的黄金年代"},
+  {id:"stat",   name:"统计学习前夜",   sub:"1993–2011", color:"#0f9b7f", desc:"核方法、深蓝与深度信念网络"},
+  {id:"deep",   name:"深度学习革命",   sub:"2012–2017", color:"#1f7fbf", desc:"AlexNet、AlphaGo 与 Transformer"},
+  {id:"llm",    name:"大模型时代",     sub:"2018–2022", color:"#7a5ac8", desc:"预训练、缩放律与 ChatGPT"},
+  {id:"gen",    name:"生成式爆发",     sub:"2023–2024", color:"#c2477f", desc:"GPT-4、多模态与全球监管"},
+  {id:"agent",  name:"智能体与前沿竞赛", sub:"2025–2026", color:"#c06a1c", desc:"推理模型、长程智能体与 AI 科学家"}
 ];
 const CATS = {
-  theory:  {name:"思想·理论", color:"#8b9cff"},
-  model:   {name:"模型·产品", color:"#3fe0c5"},
-  science: {name:"科研·突破", color:"#ffc46b"},
-  industry:{name:"产业·商业", color:"#ff8fb8"},
-  infra:   {name:"算力·基建", color:"#6fb6ff"},
-  policy:  {name:"政策·治理", color:"#c4a7ff"},
-  app:     {name:"应用·社会", color:"#a6e37f"},
-  safety:  {name:"安全·对齐", color:"#ff7b7b"}
+  theory:  {name:"思想·理论", color:"#4f5fd8"},
+  model:   {name:"模型·产品", color:"#0f9b7f"},
+  science: {name:"科研·突破", color:"#b26a00"},
+  industry:{name:"产业·商业", color:"#c2477f"},
+  infra:   {name:"算力·基建", color:"#1f7fbf"},
+  policy:  {name:"政策·治理", color:"#7a5ac8"},
+  app:     {name:"应用·社会", color:"#4f9a2f"},
+  safety:  {name:"安全·对齐", color:"#d14f5c"}
 };
 const FIELDS = {
-  engineering:  {name:"工程·动力", color:"#ffb86b", desc:"发动机、航空航天、制造、机械"},
-  math:         {name:"数学",       color:"#8b9dff", desc:"定理、证明、几何、数论、形式化"},
-  physics:      {name:"物理",       color:"#6fb6ff", desc:"量子、聚变、粒子、材料、天气"},
-  chemistry:    {name:"化学",       color:"#6fe3c4", desc:"分子、催化、材料发现"},
-  biology:      {name:"生物",       color:"#a6e37f", desc:"基因、蛋白、细胞、药物发现"},
-  medicine:     {name:"医学",       color:"#ff9f9f", desc:"临床、诊断、FDA、患者"},
-  neuroscience: {name:"神经科学",   color:"#c4a7ff", desc:"大脑、认知、神经元、脑机接口"},
-  climate:      {name:"气候·能源",  color:"#ffc46b", desc:"天气、电网、聚变、数据中心能耗"},
-  robotics:     {name:"机器人",     color:"#ff8fb8", desc:"具身智能、自动驾驶、人形机器人"},
-  computing:    {name:"计算机",     color:"#9bb0ff", desc:"软件、算法、芯片、算力、模型"},
-  society:      {name:"社会·经济",  color:"#d3b38b", desc:"政策、监管、就业、教育、市场"},
-  general:      {name:"通用·前沿",  color:"#9aa6c4", desc:"跨领域模型、产品与基础事件"}
+  engineering:  {name:"工程·动力", color:"#c06a1c", desc:"发动机、航空航天、制造、机械"},
+  math:         {name:"数学",       color:"#4f5fd8", desc:"定理、证明、几何、数论、形式化"},
+  physics:      {name:"物理",       color:"#1f7fbf", desc:"量子、聚变、粒子、材料、天气"},
+  chemistry:    {name:"化学",       color:"#0f9b7f", desc:"分子、催化、材料发现"},
+  biology:      {name:"生物",       color:"#4f9a2f", desc:"基因、蛋白、细胞、药物发现"},
+  medicine:     {name:"医学",       color:"#d14f5c", desc:"临床、诊断、FDA、患者"},
+  neuroscience: {name:"神经科学",   color:"#7a5ac8", desc:"大脑、认知、神经元、脑机接口"},
+  climate:      {name:"气候·能源",  color:"#b26a00", desc:"天气、电网、聚变、数据中心能耗"},
+  robotics:     {name:"机器人",     color:"#c2477f", desc:"具身智能、自动驾驶、人形机器人"},
+  computing:    {name:"计算机",     color:"#4f63c8", desc:"软件、算法、芯片、算力、模型"},
+  society:      {name:"社会·经济",  color:"#9a6b3f", desc:"政策、监管、就业、教育、市场"},
+  general:      {name:"通用·前沿",  color:"#64748b", desc:"跨领域模型、产品与基础事件"}
 };
 const EVENTS = [
 {"dt":"1943-12-01","d":"1943.12","era":"dawn","cat":"theory","t":"M-P 神经元模型：人工神经网络的第一个数学模型","f":true,"org":"麦卡洛克 & 皮茨","s":"麦卡洛克与皮茨用「加权求和 + 阈值」的二值单元抽象神经元，并证明这种网络能实现任意有限逻辑表达式。","x":"论文《A Logical Calculus of the Ideas Immanent in Nervous Activity》把神经元简化为二值开关，用命题逻辑描述其连接。它第一次说明「大脑的计算」可以被形式化，也让「用机器模拟智能」从哲学问题变成工程问题。这条路线后来分裂为符号主义与连接主义两大传统。","n":[["1943","论文发表"]],"tags":["神经网络","计算理论","连接主义"],"src":[["Wikipedia｜McCulloch–Pitts neuron","https://en.wikipedia.org/wiki/McCulloch%E2%80%93Pitts_neuron"]],"field":["math","neuroscience","computing"]},

@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img">
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#121d34"/><stop offset=".55" stop-color="#0a1220"/><stop offset="1" stop-color="#070b14"/>
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f4f7fc"/><stop offset="1" stop-color="#e8eff8"/>
   </linearGradient>
   <radialGradient id="glow" cx=".28" cy=".08" r=".9">
-    <stop offset="0" stop-color="#9bb0ff" stop-opacity=".30"/><stop offset="1" stop-color="#9bb0ff" stop-opacity="0"/>
+    <stop offset="0" stop-color="#4f63c8" stop-opacity=".30"/><stop offset="1" stop-color="#4f63c8" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="glow2" cx=".85" cy=".85" r=".7">
-    <stop offset="0" stop-color="#9bb0ff" stop-opacity=".12"/><stop offset="1" stop-color="#9bb0ff" stop-opacity="0"/>
+    <stop offset="0" stop-color="#4f63c8" stop-opacity=".12"/><stop offset="1" stop-color="#4f63c8" stop-opacity="0"/>
   </radialGradient>
   <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-    <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+    <path d="M48 0H0V48" fill="none" stroke="#1f2937" stroke-opacity=".06"/>
   </pattern>
   <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".58"/>
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity=".45"/>
   </linearGradient>
 </defs>
 <rect width="1200" height="520" fill="url(#bg)"/>
@@ -21,16 +21,16 @@
 <rect width="1200" height="520" fill="url(#glow2)"/>
 <rect width="1200" height="520" fill="url(#grid)"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<rect x="380" y="110" width="300" height="300" rx="30" stroke="#9bb0ff" stroke-opacity=".55" stroke-width="2"/>
-<rect x="440" y="170" width="180" height="180" rx="14" stroke="#9bb0ff" stroke-opacity=".3" stroke-width="2"/>
-<g stroke="#9bb0ff" stroke-opacity=".35" stroke-width="2">
+<rect x="380" y="110" width="300" height="300" rx="30" stroke="#4f63c8" stroke-opacity=".55" stroke-width="2"/>
+<rect x="440" y="170" width="180" height="180" rx="14" stroke="#4f63c8" stroke-opacity=".3" stroke-width="2"/>
+<g stroke="#4f63c8" stroke-opacity=".35" stroke-width="2">
   <path d="M400 60v40M470 60v40M540 60v40M610 60v40M400 420v40M470 420v40M540 420v40M610 420v40M320 150h40M320 220h40M320 290h40M320 360h40M700 150h40M700 220h40M700 290h40M700 360h40"/>
 </g>
-<g stroke="#9bb0ff" stroke-opacity=".2" stroke-width="2">
+<g stroke="#4f63c8" stroke-opacity=".2" stroke-width="2">
   <path d="M760 130h170v70h110M760 250h110v70h170M760 370h130v-60h120"/>
 </g>
-<path d="M230 380l-70 0 40-70-70 0 70-120" stroke="#9bb0ff" stroke-opacity=".35" stroke-width="2"/>
-<path d="M950 110l70 0-40 70 70 0-70 120" stroke="#9bb0ff" stroke-opacity=".25" stroke-width="2"/></g>
+<path d="M230 380l-70 0 40-70-70 0 70-120" stroke="#4f63c8" stroke-opacity=".35" stroke-width="2"/>
+<path d="M950 110l70 0-40 70 70 0-70 120" stroke="#4f63c8" stroke-opacity=".25" stroke-width="2"/></g>
 <rect width="1200" height="520" fill="url(#fade)"/>
-<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#9bb0ff" fill-opacity=".72">AI TIMELINE / COMPUTING</text>
+<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#4f63c8" fill-opacity=".72">AI TIMELINE / COMPUTING</text>
 </svg>

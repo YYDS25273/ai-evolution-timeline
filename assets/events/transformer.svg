@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img">
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#121d34"/><stop offset=".55" stop-color="#0a1220"/><stop offset="1" stop-color="#070b14"/>
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f4f7fc"/><stop offset="1" stop-color="#e8eff8"/>
   </linearGradient>
   <radialGradient id="glow" cx=".28" cy=".08" r=".9">
-    <stop offset="0" stop-color="#6fb6ff" stop-opacity=".30"/><stop offset="1" stop-color="#6fb6ff" stop-opacity="0"/>
+    <stop offset="0" stop-color="#1f7fbf" stop-opacity=".30"/><stop offset="1" stop-color="#1f7fbf" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="glow2" cx=".85" cy=".85" r=".7">
-    <stop offset="0" stop-color="#6fb6ff" stop-opacity=".12"/><stop offset="1" stop-color="#6fb6ff" stop-opacity="0"/>
+    <stop offset="0" stop-color="#1f7fbf" stop-opacity=".12"/><stop offset="1" stop-color="#1f7fbf" stop-opacity="0"/>
   </radialGradient>
   <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-    <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+    <path d="M48 0H0V48" fill="none" stroke="#1f2937" stroke-opacity=".06"/>
   </pattern>
   <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".58"/>
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity=".45"/>
   </linearGradient>
 </defs>
 <rect width="1200" height="520" fill="url(#bg)"/>
@@ -21,15 +21,15 @@
 <rect width="1200" height="520" fill="url(#glow2)"/>
 <rect width="1200" height="520" fill="url(#grid)"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<g stroke="#6fb6ff" stroke-opacity=".22" stroke-width="1.5">
+<g stroke="#1f7fbf" stroke-opacity=".22" stroke-width="1.5">
   <path d="M360 100h480M360 160h480M360 220h480M360 280h480M360 340h480M360 400h480M400 70v360M460 70v360M520 70v360M580 70v360M640 70v360M700 70v360M760 70v360M820 70v360"/>
 </g>
-<rect x="460" y="160" width="60" height="60" fill="#6fb6ff" fill-opacity=".35" stroke="none"/>
-<rect x="520" y="220" width="60" height="60" fill="#6fb6ff" fill-opacity=".55" stroke="none"/>
-<rect x="580" y="280" width="60" height="60" fill="#6fb6ff" fill-opacity=".8" stroke="none"/>
-<rect x="640" y="340" width="60" height="60" fill="#6fb6ff" fill-opacity=".45" stroke="none"/>
-<path d="M400 340h480M340 400h520" stroke="#6fb6ff" stroke-opacity=".5" stroke-width="2"/>
-<path d="M920 120l120 80-120 80z" stroke="#6fb6ff" stroke-opacity=".35" stroke-width="2"/></g>
+<rect x="460" y="160" width="60" height="60" fill="#1f7fbf" fill-opacity=".35" stroke="none"/>
+<rect x="520" y="220" width="60" height="60" fill="#1f7fbf" fill-opacity=".55" stroke="none"/>
+<rect x="580" y="280" width="60" height="60" fill="#1f7fbf" fill-opacity=".8" stroke="none"/>
+<rect x="640" y="340" width="60" height="60" fill="#1f7fbf" fill-opacity=".45" stroke="none"/>
+<path d="M400 340h480M340 400h520" stroke="#1f7fbf" stroke-opacity=".5" stroke-width="2"/>
+<path d="M920 120l120 80-120 80z" stroke="#1f7fbf" stroke-opacity=".35" stroke-width="2"/></g>
 <rect width="1200" height="520" fill="url(#fade)"/>
-<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#6fb6ff" fill-opacity=".72">AI TIMELINE / 2017 · TRANSFORMER</text>
+<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#1f7fbf" fill-opacity=".72">AI TIMELINE / 2017 · TRANSFORMER</text>
 </svg>

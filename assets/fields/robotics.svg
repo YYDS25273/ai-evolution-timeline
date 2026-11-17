@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img">
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#121d34"/><stop offset=".55" stop-color="#0a1220"/><stop offset="1" stop-color="#070b14"/>
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f4f7fc"/><stop offset="1" stop-color="#e8eff8"/>
   </linearGradient>
   <radialGradient id="glow" cx=".28" cy=".08" r=".9">
-    <stop offset="0" stop-color="#ff8fb8" stop-opacity=".30"/><stop offset="1" stop-color="#ff8fb8" stop-opacity="0"/>
+    <stop offset="0" stop-color="#c2477f" stop-opacity=".30"/><stop offset="1" stop-color="#c2477f" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="glow2" cx=".85" cy=".85" r=".7">
-    <stop offset="0" stop-color="#ff8fb8" stop-opacity=".12"/><stop offset="1" stop-color="#ff8fb8" stop-opacity="0"/>
+    <stop offset="0" stop-color="#c2477f" stop-opacity=".12"/><stop offset="1" stop-color="#c2477f" stop-opacity="0"/>
   </radialGradient>
   <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-    <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+    <path d="M48 0H0V48" fill="none" stroke="#1f2937" stroke-opacity=".06"/>
   </pattern>
   <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".58"/>
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity=".45"/>
   </linearGradient>
 </defs>
 <rect width="1200" height="520" fill="url(#bg)"/>
@@ -21,19 +21,19 @@
 <rect width="1200" height="520" fill="url(#glow2)"/>
 <rect width="1200" height="520" fill="url(#grid)"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<g stroke="#ff8fb8" stroke-opacity=".65" stroke-width="3">
+<g stroke="#c2477f" stroke-opacity=".65" stroke-width="3">
   <path d="M300 400l120-40 70-120 150 30 70-100"/>
   <path d="M420 360l-40-90 110-70"/>
 </g>
-<g fill="#ff8fb8" stroke="none">
+<g fill="#c2477f" stroke="none">
   <circle cx="300" cy="400" r="16"/><circle cx="420" cy="360" r="12"/><circle cx="490" cy="240" r="12"/><circle cx="640" cy="270" r="12"/><circle cx="710" cy="170" r="12"/>
 </g>
-<g stroke="#ff8fb8" stroke-opacity=".22" stroke-width="2">
+<g stroke="#c2477f" stroke-opacity=".22" stroke-width="2">
   <circle cx="640" cy="270" r="70" stroke-dasharray="4 8"/><circle cx="640" cy="270" r="110" stroke-dasharray="4 12"/>
 </g>
-<path d="M840 400h220M840 330h160M840 260h190" stroke="#ff8fb8" stroke-opacity=".3" stroke-width="2"/>
-<rect x="760" y="150" width="120" height="90" rx="18" stroke="#ff8fb8" stroke-opacity=".45" stroke-width="2"/>
-<circle cx="800" cy="195" r="7" fill="#ff8fb8" stroke="none"/><circle cx="840" cy="195" r="7" fill="#ff8fb8" stroke="none"/></g>
+<path d="M840 400h220M840 330h160M840 260h190" stroke="#c2477f" stroke-opacity=".3" stroke-width="2"/>
+<rect x="760" y="150" width="120" height="90" rx="18" stroke="#c2477f" stroke-opacity=".45" stroke-width="2"/>
+<circle cx="800" cy="195" r="7" fill="#c2477f" stroke="none"/><circle cx="840" cy="195" r="7" fill="#c2477f" stroke="none"/></g>
 <rect width="1200" height="520" fill="url(#fade)"/>
-<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#ff8fb8" fill-opacity=".72">AI TIMELINE / ROBOTICS</text>
+<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#c2477f" fill-opacity=".72">AI TIMELINE / ROBOTICS</text>
 </svg>

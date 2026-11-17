@@ -8,25 +8,25 @@ fs.mkdirSync(fieldDir, { recursive: true });
 fs.mkdirSync(eventDir, { recursive: true });
 
 const V = {
-  math: "#8b9dff",
-  physics: "#6fb6ff",
-  chemistry: "#6fe3c4",
-  biology: "#a6e37f",
-  medicine: "#ff9f9f",
-  neuroscience: "#c4a7ff",
-  climate: "#ffc46b",
-  engineering: "#ffb86b",
-  robotics: "#ff8fb8",
-  computing: "#9bb0ff",
-  society: "#d3b38b",
-  general: "#9aa6c4"
+  math: "#4f5fd8",
+  physics: "#1f7fbf",
+  chemistry: "#0f9b7f",
+  biology: "#4f9a2f",
+  medicine: "#d14f5c",
+  neuroscience: "#7a5ac8",
+  climate: "#b26a00",
+  engineering: "#c06a1c",
+  robotics: "#c2477f",
+  computing: "#4f63c8",
+  society: "#9a6b3f",
+  general: "#64748b"
 };
 
 function shell(accent, label, body){
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img">
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#121d34"/><stop offset=".55" stop-color="#0a1220"/><stop offset="1" stop-color="#070b14"/>
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f4f7fc"/><stop offset="1" stop-color="#e8eff8"/>
   </linearGradient>
   <radialGradient id="glow" cx=".28" cy=".08" r=".9">
     <stop offset="0" stop-color="${accent}" stop-opacity=".30"/><stop offset="1" stop-color="${accent}" stop-opacity="0"/>
@@ -35,10 +35,10 @@ function shell(accent, label, body){
     <stop offset="0" stop-color="${accent}" stop-opacity=".12"/><stop offset="1" stop-color="${accent}" stop-opacity="0"/>
   </radialGradient>
   <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-    <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+    <path d="M48 0H0V48" fill="none" stroke="#1f2937" stroke-opacity=".06"/>
   </pattern>
   <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".58"/>
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity=".45"/>
   </linearGradient>
 </defs>
 <rect width="1200" height="520" fill="url(#bg)"/>
@@ -53,7 +53,7 @@ function shell(accent, label, body){
 
 const fields = {
   math: shell(V.math, "AI TIMELINE / MATHEMATICS", `
-<path d="M100 408H1100M140 92V436" stroke="#fff" stroke-opacity=".12" stroke-width="1"/>
+<path d="M100 408H1100M140 92V436" stroke="#1f2937" stroke-opacity=".12" stroke-width="1"/>
 <path d="M140 350C260 350 260 180 380 180S500 350 620 350 740 100 860 100 980 250 1100 250" stroke="${V.math}" stroke-opacity=".9" stroke-width="3"/>
 <path d="M140 350C260 350 260 180 380 180S500 350 620 350 740 100 860 100 980 250 1100 250V436H140Z" fill="${V.math}" fill-opacity=".07" stroke="none"/>
 <circle cx="380" cy="180" r="8" fill="${V.math}" stroke="none"/><circle cx="620" cy="350" r="8" fill="${V.math}" stroke="none"/><circle cx="860" cy="100" r="8" fill="${V.math}" stroke="none"/>
@@ -69,7 +69,7 @@ const fields = {
   <circle r="24" fill="${V.physics}" fill-opacity=".18" stroke="${V.physics}" stroke-opacity=".8" stroke-width="2"/>
   <circle cx="300" cy="0" r="8" fill="${V.physics}" stroke="none"/><circle cx="-150" cy="260" r="7" fill="${V.physics}" stroke="none"/><circle cx="-150" cy="-260" r="7" fill="${V.physics}" stroke="none"/>
 </g>
-<path d="M100 430h1000M100 90h1000" stroke="#fff" stroke-opacity=".06" stroke-width="1"/>
+<path d="M100 430h1000M100 90h1000" stroke="#1f2937" stroke-opacity=".06" stroke-width="1"/>
 <path d="M100 390c80-70 160-70 240 0s160 70 240 0 160-70 240 0 160 70 240 0" stroke="${V.physics}" stroke-opacity=".28" stroke-width="2"/>`),
   chemistry: shell(V.chemistry, "AI TIMELINE / CHEMISTRY", `
 <g stroke="${V.chemistry}" stroke-opacity=".55" stroke-width="2">
@@ -182,85 +182,85 @@ const fields = {
 };
 
 const events = {
-  turing: shell("#8b9dff", "AI TIMELINE / 1950 · TURING", `
-<path d="M180 260h840" stroke="#8b9dff" stroke-opacity=".35" stroke-width="2"/>
-<g stroke="#8b9dff" stroke-opacity=".55" stroke-width="2">
+  turing: shell("#4f5fd8", "AI TIMELINE / 1950 · TURING", `
+<path d="M180 260h840" stroke="#4f5fd8" stroke-opacity=".35" stroke-width="2"/>
+<g stroke="#4f5fd8" stroke-opacity=".55" stroke-width="2">
   <rect x="220" y="210" width="70" height="100" rx="8"/><rect x="310" y="210" width="70" height="100" rx="8"/><rect x="400" y="210" width="70" height="100" rx="8"/><rect x="490" y="210" width="70" height="100" rx="8"/>
   <path d="M255 245h0M345 245h0M435 245h0M525 245h0" stroke-width="10"/>
 </g>
-<g transform="translate(820 260)" stroke="#8b9dff" stroke-opacity=".5" stroke-width="2">
+<g transform="translate(820 260)" stroke="#4f5fd8" stroke-opacity=".5" stroke-width="2">
   <circle r="104"/><circle r="56"/><path d="M0-104v44M0 104v-44M-104 0h44M104 0h-44"/>
 </g>
-<path d="M640 260h80" stroke="#8b9dff" stroke-opacity=".7" stroke-width="3"/><circle cx="640" cy="260" r="10" fill="#8b9dff" stroke="none"/>`),
-  alphago: shell("#ffc46b", "AI TIMELINE / 2016 · ALPHAGO", `
-<rect x="300" y="70" width="600" height="380" rx="20" stroke="#ffc46b" stroke-opacity=".5" stroke-width="2"/>
-<g stroke="#ffc46b" stroke-opacity=".18" stroke-width="1.5">
+<path d="M640 260h80" stroke="#4f5fd8" stroke-opacity=".7" stroke-width="3"/><circle cx="640" cy="260" r="10" fill="#4f5fd8" stroke="none"/>`),
+  alphago: shell("#b26a00", "AI TIMELINE / 2016 · ALPHAGO", `
+<rect x="300" y="70" width="600" height="380" rx="20" stroke="#b26a00" stroke-opacity=".5" stroke-width="2"/>
+<g stroke="#b26a00" stroke-opacity=".18" stroke-width="1.5">
   <path d="M360 70v380M420 70v380M480 70v380M540 70v380M600 70v380M660 70v380M720 70v380M780 70v380M840 70v380M360 130h540M360 190h540M360 250h540M360 310h540M360 370h540M360 430h540"/>
 </g>
-<g fill="#ffc46b">
+<g fill="#1f2937">
   <circle cx="480" cy="190" r="17"/><circle cx="600" cy="250" r="17"/><circle cx="720" cy="310" r="17"/><circle cx="840" cy="190" r="17"/>
 </g>
-<g fill="#e8edf9">
+<g fill="#ffffff" stroke="#334155" stroke-width="2">
   <circle cx="540" cy="190" r="17"/><circle cx="660" cy="130" r="17"/><circle cx="660" cy="370" r="17"/><circle cx="780" cy="250" r="17"/><circle cx="780" cy="430" r="17"/>
 </g>
-<path d="M900 120l120 0-60 100z" stroke="#ffc46b" stroke-opacity=".35" stroke-width="2"/>`),
-  transformer: shell("#6fb6ff", "AI TIMELINE / 2017 · TRANSFORMER", `
-<g stroke="#6fb6ff" stroke-opacity=".22" stroke-width="1.5">
+<path d="M900 120l120 0-60 100z" stroke="#b26a00" stroke-opacity=".35" stroke-width="2"/>`),
+  transformer: shell("#1f7fbf", "AI TIMELINE / 2017 · TRANSFORMER", `
+<g stroke="#1f7fbf" stroke-opacity=".22" stroke-width="1.5">
   <path d="M360 100h480M360 160h480M360 220h480M360 280h480M360 340h480M360 400h480M400 70v360M460 70v360M520 70v360M580 70v360M640 70v360M700 70v360M760 70v360M820 70v360"/>
 </g>
-<rect x="460" y="160" width="60" height="60" fill="#6fb6ff" fill-opacity=".35" stroke="none"/>
-<rect x="520" y="220" width="60" height="60" fill="#6fb6ff" fill-opacity=".55" stroke="none"/>
-<rect x="580" y="280" width="60" height="60" fill="#6fb6ff" fill-opacity=".8" stroke="none"/>
-<rect x="640" y="340" width="60" height="60" fill="#6fb6ff" fill-opacity=".45" stroke="none"/>
-<path d="M400 340h480M340 400h520" stroke="#6fb6ff" stroke-opacity=".5" stroke-width="2"/>
-<path d="M920 120l120 80-120 80z" stroke="#6fb6ff" stroke-opacity=".35" stroke-width="2"/>`),
-  alphafold: shell("#a6e37f", "AI TIMELINE / 2020 · ALPHAFOLD", `
-<path d="M240 360c80-180 180-180 260 0s180 180 260 0 180-180 260 0" stroke="#a6e37f" stroke-opacity=".75" stroke-width="4"/>
-<path d="M240 360c80-180 180-180 260 0s180 180 260 0 180-180 260 0" stroke="#a6e37f" stroke-opacity=".18" stroke-width="12"/>
-<path d="M300 200c100 40 160 120 260 120s180-80 280-120" stroke="#a6e37f" stroke-opacity=".35" stroke-width="2"/>
-<g fill="#a6e37f" stroke="none">
+<rect x="460" y="160" width="60" height="60" fill="#1f7fbf" fill-opacity=".35" stroke="none"/>
+<rect x="520" y="220" width="60" height="60" fill="#1f7fbf" fill-opacity=".55" stroke="none"/>
+<rect x="580" y="280" width="60" height="60" fill="#1f7fbf" fill-opacity=".8" stroke="none"/>
+<rect x="640" y="340" width="60" height="60" fill="#1f7fbf" fill-opacity=".45" stroke="none"/>
+<path d="M400 340h480M340 400h520" stroke="#1f7fbf" stroke-opacity=".5" stroke-width="2"/>
+<path d="M920 120l120 80-120 80z" stroke="#1f7fbf" stroke-opacity=".35" stroke-width="2"/>`),
+  alphafold: shell("#4f9a2f", "AI TIMELINE / 2020 · ALPHAFOLD", `
+<path d="M240 360c80-180 180-180 260 0s180 180 260 0 180-180 260 0" stroke="#4f9a2f" stroke-opacity=".75" stroke-width="4"/>
+<path d="M240 360c80-180 180-180 260 0s180 180 260 0 180-180 260 0" stroke="#4f9a2f" stroke-opacity=".18" stroke-width="12"/>
+<path d="M300 200c100 40 160 120 260 120s180-80 280-120" stroke="#4f9a2f" stroke-opacity=".35" stroke-width="2"/>
+<g fill="#4f9a2f" stroke="none">
   <circle cx="300" cy="260" r="8"/><circle cx="380" cy="190" r="7"/><circle cx="460" cy="300" r="9"/><circle cx="560" cy="320" r="7"/><circle cx="660" cy="260" r="8"/><circle cx="760" cy="200" r="7"/><circle cx="860" cy="280" r="9"/>
 </g>
-<circle cx="900" cy="180" r="80" stroke="#a6e37f" stroke-opacity=".16" stroke-width="2" stroke-dasharray="4 10"/>`),
-  chatgpt: shell("#3fe0c5", "AI TIMELINE / 2022 · CHATGPT", `
-<path d="M260 140h500a50 50 0 0 1 50 50v140a50 50 0 0 1-50 50H420l-100 70v-70h-60a50 50 0 0 1-50-50V190a50 50 0 0 1 50-50z" stroke="#3fe0c5" stroke-opacity=".55" stroke-width="2"/>
-<path d="M690 260h260a40 40 0 0 1 40 40v90a40 40 0 0 1-40 40h-160l-70 50v-50h-30a40 40 0 0 1-40-40v-90a40 40 0 0 1 40-40z" stroke="#3fe0c5" stroke-opacity=".35" stroke-width="2"/>
-<g fill="#3fe0c5" stroke="none">
+<circle cx="900" cy="180" r="80" stroke="#4f9a2f" stroke-opacity=".16" stroke-width="2" stroke-dasharray="4 10"/>`),
+  chatgpt: shell("#0f9b7f", "AI TIMELINE / 2022 · CHATGPT", `
+<path d="M260 140h500a50 50 0 0 1 50 50v140a50 50 0 0 1-50 50H420l-100 70v-70h-60a50 50 0 0 1-50-50V190a50 50 0 0 1 50-50z" stroke="#0f9b7f" stroke-opacity=".55" stroke-width="2"/>
+<path d="M690 260h260a40 40 0 0 1 40 40v90a40 40 0 0 1-40 40h-160l-70 50v-50h-30a40 40 0 0 1-40-40v-90a40 40 0 0 1 40-40z" stroke="#0f9b7f" stroke-opacity=".35" stroke-width="2"/>
+<g fill="#0f9b7f" stroke="none">
   <circle cx="350" cy="260" r="9"/><circle cx="420" cy="260" r="9"/><circle cx="490" cy="260" r="9"/>
 </g>
-<path d="M740 370h140M740 400h100" stroke="#3fe0c5" stroke-opacity=".35" stroke-width="2"/>
-<circle cx="940" cy="130" r="60" stroke="#3fe0c5" stroke-opacity=".14" stroke-width="2" stroke-dasharray="4 9"/>`),
-  "openai-math": shell("#8b9dff", "AI TIMELINE / 2026 · 722 MANUSCRIPTS", `
-<g stroke="#8b9dff" stroke-opacity=".35" stroke-width="2">
+<path d="M740 370h140M740 400h100" stroke="#0f9b7f" stroke-opacity=".35" stroke-width="2"/>
+<circle cx="940" cy="130" r="60" stroke="#0f9b7f" stroke-opacity=".14" stroke-width="2" stroke-dasharray="4 9"/>`),
+  "openai-math": shell("#4f5fd8", "AI TIMELINE / 2026 · 722 MANUSCRIPTS", `
+<g stroke="#4f5fd8" stroke-opacity=".35" stroke-width="2">
   <rect x="390" y="120" width="300" height="300" rx="12" transform="rotate(-6 540 270)"/>
   <rect x="420" y="100" width="300" height="300" rx="12" transform="rotate(-2 570 250)"/>
   <rect x="450" y="80" width="300" height="300" rx="12"/>
 </g>
-<path d="M500 150h190M500 190h150M500 230h190M500 270h130M500 310h170" stroke="#8b9dff" stroke-opacity=".3" stroke-width="2"/>
-<g transform="translate(820 290)" stroke="#8b9dff" stroke-opacity=".65" stroke-width="4">
+<path d="M500 150h190M500 190h150M500 230h190M500 270h130M500 310h170" stroke="#4f5fd8" stroke-opacity=".3" stroke-width="2"/>
+<g transform="translate(820 290)" stroke="#4f5fd8" stroke-opacity=".65" stroke-width="4">
   <circle r="86"/><path d="M-38 2l28 30 56-70"/>
 </g>
-<text x="570" y="260" font-family="Georgia, serif" font-size="96" fill="#8b9dff" fill-opacity=".2">∑</text>
-<path d="M180 420h840" stroke="#8b9dff" stroke-opacity=".15" stroke-width="2"/>`),
-  leap71: shell("#ffb86b", "AI TIMELINE / 2025 · LEAP 71", `
-<path d="M300 220h240l120 40-120 40H300z" stroke="#ffb86b" stroke-opacity=".55" stroke-width="2"/>
-<path d="M660 220l180 40-180 40z" stroke="#ffb86b" stroke-opacity=".75" stroke-width="2"/>
-<path d="M840 260c100-80 200-40 280 0-80 40-180 80-280 0z" fill="#ffb86b" fill-opacity=".15" stroke="#ffb86b" stroke-opacity=".6" stroke-width="2"/>
-<path d="M880 260c60-30 120-20 180 0-60 20-120 30-180 0z" fill="#ffb86b" fill-opacity=".35" stroke="none"/>
-<g stroke="#ffb86b" stroke-opacity=".22" stroke-width="2">
+<text x="570" y="260" font-family="Georgia, serif" font-size="96" fill="#4f5fd8" fill-opacity=".2">∑</text>
+<path d="M180 420h840" stroke="#4f5fd8" stroke-opacity=".15" stroke-width="2"/>`),
+  leap71: shell("#c06a1c", "AI TIMELINE / 2025 · LEAP 71", `
+<path d="M300 220h240l120 40-120 40H300z" stroke="#c06a1c" stroke-opacity=".55" stroke-width="2"/>
+<path d="M660 220l180 40-180 40z" stroke="#c06a1c" stroke-opacity=".75" stroke-width="2"/>
+<path d="M840 260c100-80 200-40 280 0-80 40-180 80-280 0z" fill="#c06a1c" fill-opacity=".15" stroke="#c06a1c" stroke-opacity=".6" stroke-width="2"/>
+<path d="M880 260c60-30 120-20 180 0-60 20-120 30-180 0z" fill="#c06a1c" fill-opacity=".35" stroke="none"/>
+<g stroke="#c06a1c" stroke-opacity=".22" stroke-width="2">
   <path d="M300 180h240M300 340h240M340 140v240M460 140v240"/>
 </g>
-<circle cx="420" cy="260" r="70" stroke="#ffb86b" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 10"/>
-<path d="M180 420h840" stroke="#ffb86b" stroke-opacity=".15" stroke-width="2"/>`),
-  "ge-ramjet": shell("#ffb86b", "AI TIMELINE / 2026 · GE RAMJET", `
-<path d="M220 220h420l140-70 140 70v80l-140 70-140-70H220z" stroke="#ffb86b" stroke-opacity=".55" stroke-width="2"/>
-<path d="M220 260h420M640 150v220M780 150v220" stroke="#ffb86b" stroke-opacity=".3" stroke-width="2"/>
-<g fill="#ffb86b" stroke="none" fill-opacity=".4">
+<circle cx="420" cy="260" r="70" stroke="#c06a1c" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 10"/>
+<path d="M180 420h840" stroke="#c06a1c" stroke-opacity=".15" stroke-width="2"/>`),
+  "ge-ramjet": shell("#c06a1c", "AI TIMELINE / 2026 · GE RAMJET", `
+<path d="M220 220h420l140-70 140 70v80l-140 70-140-70H220z" stroke="#c06a1c" stroke-opacity=".55" stroke-width="2"/>
+<path d="M220 260h420M640 150v220M780 150v220" stroke="#c06a1c" stroke-opacity=".3" stroke-width="2"/>
+<g fill="#c06a1c" stroke="none" fill-opacity=".4">
   <path d="M760 230l40 30-40 30z"/><path d="M820 230l40 30-40 30z"/><path d="M880 230l40 30-40 30z"/>
 </g>
-<path d="M220 190l-80 70 80 70" stroke="#ffb86b" stroke-opacity=".35" stroke-width="2"/>
-<path d="M940 260h120" stroke="#ffb86b" stroke-opacity=".6" stroke-width="3"/>
-<path d="M180 420h840" stroke="#ffb86b" stroke-opacity=".15" stroke-width="2"/>`)
+<path d="M220 190l-80 70 80 70" stroke="#c06a1c" stroke-opacity=".35" stroke-width="2"/>
+<path d="M940 260h120" stroke="#c06a1c" stroke-opacity=".6" stroke-width="3"/>
+<path d="M180 420h840" stroke="#c06a1c" stroke-opacity=".15" stroke-width="2"/>`)
 };
 
 for(const [id, svg] of Object.entries(fields)) fs.writeFileSync(path.join(fieldDir, id + ".svg"), svg, "utf8");

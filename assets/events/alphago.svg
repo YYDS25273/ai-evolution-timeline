@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img">
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#121d34"/><stop offset=".55" stop-color="#0a1220"/><stop offset="1" stop-color="#070b14"/>
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f4f7fc"/><stop offset="1" stop-color="#e8eff8"/>
   </linearGradient>
   <radialGradient id="glow" cx=".28" cy=".08" r=".9">
-    <stop offset="0" stop-color="#ffc46b" stop-opacity=".30"/><stop offset="1" stop-color="#ffc46b" stop-opacity="0"/>
+    <stop offset="0" stop-color="#b26a00" stop-opacity=".30"/><stop offset="1" stop-color="#b26a00" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="glow2" cx=".85" cy=".85" r=".7">
-    <stop offset="0" stop-color="#ffc46b" stop-opacity=".12"/><stop offset="1" stop-color="#ffc46b" stop-opacity="0"/>
+    <stop offset="0" stop-color="#b26a00" stop-opacity=".12"/><stop offset="1" stop-color="#b26a00" stop-opacity="0"/>
   </radialGradient>
   <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-    <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+    <path d="M48 0H0V48" fill="none" stroke="#1f2937" stroke-opacity=".06"/>
   </pattern>
   <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".58"/>
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity=".45"/>
   </linearGradient>
 </defs>
 <rect width="1200" height="520" fill="url(#bg)"/>
@@ -21,17 +21,17 @@
 <rect width="1200" height="520" fill="url(#glow2)"/>
 <rect width="1200" height="520" fill="url(#grid)"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<rect x="300" y="70" width="600" height="380" rx="20" stroke="#ffc46b" stroke-opacity=".5" stroke-width="2"/>
-<g stroke="#ffc46b" stroke-opacity=".18" stroke-width="1.5">
+<rect x="300" y="70" width="600" height="380" rx="20" stroke="#b26a00" stroke-opacity=".5" stroke-width="2"/>
+<g stroke="#b26a00" stroke-opacity=".18" stroke-width="1.5">
   <path d="M360 70v380M420 70v380M480 70v380M540 70v380M600 70v380M660 70v380M720 70v380M780 70v380M840 70v380M360 130h540M360 190h540M360 250h540M360 310h540M360 370h540M360 430h540"/>
 </g>
-<g fill="#ffc46b">
+<g fill="#1f2937">
   <circle cx="480" cy="190" r="17"/><circle cx="600" cy="250" r="17"/><circle cx="720" cy="310" r="17"/><circle cx="840" cy="190" r="17"/>
 </g>
-<g fill="#e8edf9">
+<g fill="#ffffff" stroke="#334155" stroke-width="2">
   <circle cx="540" cy="190" r="17"/><circle cx="660" cy="130" r="17"/><circle cx="660" cy="370" r="17"/><circle cx="780" cy="250" r="17"/><circle cx="780" cy="430" r="17"/>
 </g>
-<path d="M900 120l120 0-60 100z" stroke="#ffc46b" stroke-opacity=".35" stroke-width="2"/></g>
+<path d="M900 120l120 0-60 100z" stroke="#b26a00" stroke-opacity=".35" stroke-width="2"/></g>
 <rect width="1200" height="520" fill="url(#fade)"/>
-<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#ffc46b" fill-opacity=".72">AI TIMELINE / 2016 · ALPHAGO</text>
+<text x="44" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="3.2" fill="#b26a00" fill-opacity=".72">AI TIMELINE / 2016 · ALPHAGO</text>
 </svg>
