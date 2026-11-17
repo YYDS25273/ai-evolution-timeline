@@ -24,17 +24,17 @@ if(events.length < EXPECTED_MIN) throw new Error(`expected at least ${EXPECTED_M
 
 const FIELD_ORDER = ["engineering","math","physics","chemistry","biology","medicine","neuroscience","climate","robotics","computing","society","general"];
 const FIELD_RULES = {
-  engineering: ["火箭发动机","航空发动机","冲压发动机","发动机设计","涡轮","燃气轮机","航空","航天","火箭","飞机","汽车","车辆","制造","机械臂","机械设计","机械工程","CFD","流体","热管理","增材制造","3D打印","叶片","轴承","推进","燃烧","内燃机","电机","发电机","变压器","风机","泵","阀门","齿轮","传动"],
-  math: ["数学","定理","证明","几何","代数","数论","黎曼","Navier","千禧年","Lean","FrontierMath","奥赛","形式化","符号逻辑","概率论","博弈论","优化","拓扑","组合数学","矩阵"],
-  physics: ["物理","量子","核聚变","托卡马克","等离子体","粒子","引力","高能","诺贝尔物理学","超导","半导体","光刻","材料","晶体"],
-  chemistry: ["分子","催化","有机","材料发现","GNoME","晶体结构","药物分子","化学反应","化学奖"],
-  biology: ["生物","基因","蛋白","细胞","DNA","RNA","噬菌体","肺癌","生命科学","AlphaFold","基因组","物种","生态系统","农业","合成生物"],
-  medicine: ["医学","医疗","临床","FDA","疾病","诊断","患者","手术","医院","健康","心理"],
-  neuroscience: ["神经科学","神经元","突触","大脑","认知","脑机","意识"],
-  climate: ["气候","天气","能源","电网","电力","碳排放","气象","太阳能","储能","IEA","数据中心"],
-  robotics: ["机器人","具身","自动驾驶","无人机","机械臂","人形","运动控制","工业控制"],
-  computing: ["计算机","编程","软件","代码","算法","芯片","GPU","TPU","算力","操作系统","编译器","数据库","云","API","开源","框架","训练","推理","智能体","Transformer","神经网络","深度学习","机器学习","强化学习","语言模型","大模型"],
-  society: ["政策","监管","法律","就业","教育","经济","市场","商业","企业","收入","投资","IPO","估值","劳动力","社会","伦理","安全","版权","治理"]
+  engineering: ["火箭发动机","航空发动机","冲压发动机","发动机设计","涡轮","燃气轮机","航空","航天","火箭","飞机","汽车","车辆","制造","机械臂","机械设计","机械工程","CFD","流体","热管理","增材制造","3D打印","叶片","轴承","推进","燃烧","内燃机","电机","发电机","变压器","风机","泵","阀门","齿轮","传动","engine","turbine","rocket","aerospace","manufacturing","mechanical","propulsion"],
+  math: ["数学","定理","证明","几何","代数","数论","黎曼","Navier","千禧年","Lean","FrontierMath","奥赛","形式化","符号逻辑","概率论","博弈论","优化","拓扑","组合数学","矩阵","mathematics","theorem","proof","geometry","algebra","topology","optimization"],
+  physics: ["物理","量子","核聚变","托卡马克","等离子体","粒子","引力","高能","诺贝尔物理学","超导","半导体","光刻","材料","晶体","physics","quantum","fusion","plasma","particle","material"],
+  chemistry: ["分子","催化","有机","材料发现","GNoME","晶体结构","药物分子","化学反应","化学奖","chemistry","molecule","catalyst"],
+  biology: ["生物","基因","蛋白","细胞","DNA","RNA","噬菌体","肺癌","生命科学","AlphaFold","基因组","物种","生态系统","农业","合成生物","protein","gene","cell","cancer","drug","bio"],
+  medicine: ["医学","医疗","临床","FDA","疾病","诊断","患者","手术","医院","健康","心理","medical","clinical","patient","disease","diagnosis"],
+  neuroscience: ["神经科学","神经元","突触","大脑","认知","脑机","意识","neuroscience","brain","neuron","cognition"],
+  climate: ["气候","天气","能源","电网","电力","碳排放","气象","太阳能","储能","IEA","数据中心","climate","weather","energy","grid","emissions"],
+  robotics: ["机器人","具身","自动驾驶","无人机","机械臂","人形","运动控制","工业控制","robot","autonomous","drone","humanoid"],
+  computing: ["计算机","编程","软件","代码","算法","芯片","GPU","TPU","算力","操作系统","编译器","数据库","云","API","开源","框架","训练","推理","智能体","Transformer","神经网络","深度学习","机器学习","强化学习","语言模型","大模型","llm","gpt","agent","language model","neural","machine learning","deep learning","reinforcement learning","learning","network","software","algorithm","benchmark","computer","chip"],
+  society: ["政策","监管","法律","就业","教育","经济","市场","商业","企业","收入","投资","IPO","估值","劳动力","社会","伦理","安全","版权","治理","policy","regulation","law","economy","market","business","employment","education"]
 };
 const FIELD_HINTS = {
   "LEAP 71": ["engineering"], "Noyron": ["engineering"], "GE Aerospace": ["engineering"],

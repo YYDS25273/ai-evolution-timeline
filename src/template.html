@@ -348,6 +348,16 @@ body::after{
 }
 .srclist a:hover{border-color:color-mix(in srgb,var(--c) 45%,transparent);background:rgba(255,255,255,.05);color:#fff}
 .srclist a .dom{margin-left:auto;font-family:var(--mono);font-size:9.5px;color:var(--dim)}
+.extlinks{display:flex;flex-direction:column;gap:6px}
+.extlink{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;text-decoration:none;
+  color:#c8d2ea;font-size:11.5px;border:1px solid rgba(255,255,255,.14);border-radius:9px;
+  padding:9px 11px;background:rgba(255,255,255,.035);transition:.16s;
+}
+.extlink:hover{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08)}
+.extlink.bili{color:#ffd7e7;border-color:rgba(255,120,170,.34);background:rgba(255,120,170,.08)}
+.extlink.bili:hover{border-color:rgba(255,120,170,.6);background:rgba(255,120,170,.14)}
+.extlink .dom{font-family:var(--mono);font-size:9.5px;color:var(--dim)}
 .drawer-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
 .drawer-tags span{font-size:10.5px;color:#8f9bb9;background:rgba(255,255,255,.045);border-radius:5px;padding:2.5px 7px}
 .drawer-nav{
@@ -971,8 +981,8 @@ function filtered(){
 }
 
 /* ---------- idle autoplay ---------- */
-const IDLE_MS=5000, AUTO_SPEED=45; // px/s, past -> present
-let idleTimer=null, autoRaf=null, autoLast=0;
+const IDLE_MS=5000, AUTO_SPEED=45, AUTO_RAMP_MS=1500, AUTO_TAIL_PX=200; // px/s, ease-in/out
+let idleTimer=null, autoRaf=null, autoLast=0, autoStart=0;
 const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function canAutoplay(){
@@ -980,21 +990,25 @@ function canAutoplay(){
 }
 function stopAutoplay(){
   if(autoRaf) cancelAnimationFrame(autoRaf);
-  autoRaf=null; autoLast=0;
+  autoRaf=null; autoLast=0; autoStart=0;
 }
 function startAutoplay(){
   if(autoRaf || !canAutoplay()) return;
   const max=scroller.scrollWidth-scroller.clientWidth;
   if(max<=0 || scroller.scrollLeft>=max-1) return;
-  autoLast=0;
+  autoLast=0; autoStart=0;
   const tick=(ts)=>{
     if(!canAutoplay()){ stopAutoplay(); return; }
-    if(!autoLast) autoLast=ts;
+    if(!autoLast){ autoLast=ts; autoStart=ts; }
     const dt=Math.min((ts-autoLast)/1000,0.05);
     autoLast=ts;
     const maxNow=scroller.scrollWidth-scroller.clientWidth;
-    if(scroller.scrollLeft>=maxNow-1){ stopAutoplay(); return; }
-    scroller.scrollLeft=Math.min(maxNow, scroller.scrollLeft+AUTO_SPEED*dt);
+    const remaining=maxNow-scroller.scrollLeft;
+    if(remaining<=1){ scroller.scrollLeft=maxNow; stopAutoplay(); return; }
+    const ramp=Math.min(1,(ts-autoStart)/AUTO_RAMP_MS);
+    const tail=Math.min(1,remaining/AUTO_TAIL_PX);
+    const speed=AUTO_SPEED*ramp*Math.max(0.12,tail);
+    scroller.scrollLeft=Math.min(maxNow, scroller.scrollLeft+speed*dt);
     autoRaf=requestAnimationFrame(tick);
   };
   autoRaf=requestAnimationFrame(tick);
@@ -1220,7 +1234,10 @@ function openEvent(id){
   body.style.setProperty("--c",c);
   const ps=(e.x||"").split("\n").filter(Boolean);
   body.appendChild(el("p","prose lead",esc(e.s)));
-  ps.forEach(t=>body.appendChild(el("p","prose",esc(t))));
+  if(ps.length){
+    body.appendChild(el("div","sec-title","详细说明"));
+    ps.forEach(t=>body.appendChild(el("p","prose",esc(t))));
+  }
   if(e.n&&e.n.length){
     const grid=el("div","metrics");
     e.n.forEach(([v,l])=>{
@@ -1245,6 +1262,23 @@ function openEvent(id){
     });
     body.appendChild(list);
   }
+  const rawQuery=[e.t,e.org].filter(Boolean).join(" ").replace(/[「」“”·:：,，.。!?！？()（）/]/g," ").replace(/\s+/g," ").trim();
+  const query=rawQuery||"人工智能 AI";
+  const bili=`https://search.bilibili.com/all?keyword=${encodeURIComponent(query.slice(0,60))}`;
+  const wiki=`https://zh.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(query.slice(0,60))}`;
+  const web=`https://www.bing.com/search?q=${encodeURIComponent(query+" AI")}`;
+  body.appendChild(el("div","sec-title","视频与更多"));
+  const ext=el("div","extlinks");
+  const extLink=(label,url,cls="")=>{
+    const a=el("a","extlink "+cls); a.href=url; a.target="_blank"; a.rel="noopener noreferrer";
+    a.innerHTML=`<span>${label}</span><span class="dom">↗</span>`; return a;
+  };
+  ext.append(
+    extLink("B站相关视频（搜索）",bili,"bili"),
+    extLink("维基百科",wiki),
+    extLink("更多网页来源",web)
+  );
+  body.appendChild(ext);
   body.scrollTop=0;
   const list=layoutCache.list;
   const idx=list.findIndex(x=>x.id===id);
