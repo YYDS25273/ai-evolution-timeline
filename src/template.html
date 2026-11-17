@@ -8,7 +8,13 @@
 <meta property="og:title" content="人工智能发展史 · 1943—2026 横向时间线">
 <meta property="og:description" content="156 个节点：从神经元模型、两次 AI 寒冬、Transformer，到 2026 年的前沿模型、AI 科学家与产业数据。">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://yyds25273.github.io/ai-evolution-timeline/">
+<meta property="og:image" content="https://yyds25273.github.io/ai-evolution-timeline/preview.png">
+<meta property="og:image:alt" content="AI 发展史时间线预览">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#060912">
+<link rel="canonical" href="https://yyds25273.github.io/ai-evolution-timeline/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060912'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial,sans-serif' font-weight='700' text-anchor='middle' fill='%237c8cff'%3EAI%3C/text%3E%3C/svg%3E">
 <style>
 :root{
   color-scheme:dark;
@@ -490,7 +496,7 @@ body::after{
     </div>
     <div class="empty" id="empty">没有匹配的事件，试试别的关键词</div>
     <div class="yearhud" id="yearHud">1943</div>
-    <div class="hint"><kbd>←</kbd><kbd>→</kbd> 滚动 · 滚轮横移 · 拖拽平移 · 点击卡片查看详情</div>
+    <div class="hint"><kbd>←</kbd><kbd>→</kbd> 滚动 · 滚轮横移 · 拖拽平移 · 静止 5 秒自动前进 · 点击卡片查看详情</div>
     <div class="jump">
       <button id="toStart">↤ 起点</button>
       <button id="toLatest" class="primary">最新 2026 →</button>
@@ -653,6 +659,48 @@ function filtered(){
   });
 }
 
+/* ---------- idle autoplay ---------- */
+const IDLE_MS=5000, AUTO_SPEED=90; // px/s, past -> present
+let idleTimer=null, autoRaf=null, autoLast=0;
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function canAutoplay(){
+  return !reduceMotion.matches && !document.hidden && !state.current && !$("#about").classList.contains("on");
+}
+function stopAutoplay(){
+  if(autoRaf) cancelAnimationFrame(autoRaf);
+  autoRaf=null; autoLast=0;
+}
+function startAutoplay(){
+  if(autoRaf || !canAutoplay()) return;
+  const max=scroller.scrollWidth-scroller.clientWidth;
+  if(max<=0 || scroller.scrollLeft>=max-1) return;
+  autoLast=0;
+  const tick=(ts)=>{
+    if(!canAutoplay()){ stopAutoplay(); return; }
+    if(!autoLast) autoLast=ts;
+    const dt=Math.min((ts-autoLast)/1000,0.05);
+    autoLast=ts;
+    const maxNow=scroller.scrollWidth-scroller.clientWidth;
+    if(scroller.scrollLeft>=maxNow-1){ stopAutoplay(); return; }
+    scroller.scrollLeft=Math.min(maxNow, scroller.scrollLeft+AUTO_SPEED*dt);
+    autoRaf=requestAnimationFrame(tick);
+  };
+  autoRaf=requestAnimationFrame(tick);
+}
+function resetIdle(){
+  stopAutoplay();
+  clearTimeout(idleTimer);
+  if(canAutoplay()) idleTimer=setTimeout(startAutoplay, IDLE_MS);
+}
+for(const evt of ["pointerdown","wheel","touchstart","keydown","focusin"]){
+  document.addEventListener(evt, resetIdle, {passive:true, capture:true});
+}
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden) stopAutoplay(); else resetIdle();
+});
+if(reduceMotion.addEventListener) reduceMotion.addEventListener("change",()=>reduceMotion.matches?stopAutoplay():resetIdle());
+
 /* ---------- layout / render ---------- */
 let layoutCache={list:[],xs:[],step:0,cardW:0,total:0};
 function render(animate=true){
@@ -671,6 +719,7 @@ function render(animate=true){
     Array.from(minimap.querySelectorAll(".mm-seg")).forEach(n=>n.remove());
     $("#yearHud").textContent="—";
     layoutCache={list:[],xs:[],step,cardW,total};
+    stopAutoplay();
     return;
   }
   $("#empty").classList.remove("on"); mmView.style.display="block";
@@ -742,6 +791,7 @@ function render(animate=true){
   $("#count").innerHTML=`<b>${list.length}</b> / ${EVENTS.length} 个节点`;
   updateMinimap();
   if(state.first){state.first=false;scroller.scrollLeft=0;}
+  resetIdle();
 }
 
 /* ---------- minimap ---------- */
@@ -832,6 +882,7 @@ document.addEventListener("keydown",e=>{
 /* ---------- drawer ---------- */
 function openEvent(id){
   const e=EVENTS.find(x=>x.id===id); if(!e)return;
+  stopAutoplay();
   state.current=id;
   state.lastFocus=document.activeElement;
   const c=CATS[e.cat]?CATS[e.cat].color:"#8b9cff";
@@ -902,6 +953,7 @@ function closeDrawer(){
   clearHash();
   if(state.lastFocus&&state.lastFocus.focus){try{state.lastFocus.focus()}catch(e){}}
   state.lastFocus=null;
+  resetIdle();
 }
 $("#scrim").addEventListener("click",closeDrawer);
 $("#drawerClose").addEventListener("click",closeDrawer);
@@ -910,10 +962,10 @@ $("#nextBtn").addEventListener("click",()=>{const l=layoutCache.list,i=l.findInd
 
 /* ---------- about ---------- */
 const about=$("#about");
-$("#aboutBtn").addEventListener("click",()=>about.classList.add("on"));
-$("#closeAbout").addEventListener("click",()=>about.classList.remove("on"));
-about.addEventListener("click",e=>{if(e.target===about)about.classList.remove("on")});
-function closeAbout(){about.classList.remove("on")}
+$("#aboutBtn").addEventListener("click",()=>{stopAutoplay();about.classList.add("on");});
+$("#closeAbout").addEventListener("click",()=>{about.classList.remove("on");resetIdle();});
+about.addEventListener("click",e=>{if(e.target===about){about.classList.remove("on");resetIdle();}});
+function closeAbout(){about.classList.remove("on");resetIdle();}
 
 /* ---------- search / zoom / jump ---------- */
 let qTimer=null;

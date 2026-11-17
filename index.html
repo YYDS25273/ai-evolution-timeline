@@ -8,7 +8,13 @@
 <meta property="og:title" content="人工智能发展史 · 1943—2026 横向时间线">
 <meta property="og:description" content="156 个节点：从神经元模型、两次 AI 寒冬、Transformer，到 2026 年的前沿模型、AI 科学家与产业数据。">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://yyds25273.github.io/ai-evolution-timeline/">
+<meta property="og:image" content="https://yyds25273.github.io/ai-evolution-timeline/preview.png">
+<meta property="og:image:alt" content="AI 发展史时间线预览">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#060912">
+<link rel="canonical" href="https://yyds25273.github.io/ai-evolution-timeline/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060912'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial,sans-serif' font-weight='700' text-anchor='middle' fill='%237c8cff'%3EAI%3C/text%3E%3C/svg%3E">
 <style>
 :root{
   color-scheme:dark;
@@ -490,7 +496,7 @@ body::after{
     </div>
     <div class="empty" id="empty">没有匹配的事件，试试别的关键词</div>
     <div class="yearhud" id="yearHud">1943</div>
-    <div class="hint"><kbd>←</kbd><kbd>→</kbd> 滚动 · 滚轮横移 · 拖拽平移 · 点击卡片查看详情</div>
+    <div class="hint"><kbd>←</kbd><kbd>→</kbd> 滚动 · 滚轮横移 · 拖拽平移 · 静止 5 秒自动前进 · 点击卡片查看详情</div>
     <div class="jump">
       <button id="toStart">↤ 起点</button>
       <button id="toLatest" class="primary">最新 2026 →</button>
@@ -708,7 +714,7 @@ const EVENTS = [
 {"dt":"2026-09-03","d":"2026.09","era":"agent","cat":"model","t":"GPT-6 Astra：前沿数学饱和，电脑操作接近人类","f":true,"org":"OpenAI","s":"9 月 3 日，OpenAI 发布 GPT-6 Astra，FrontierMath 第 4 级达 98%、ARC-AGI-3 达 99.9%、ExploitBench 100%，在电脑操作、浏览、软件工程与科研上全面领先。","x":"Astra 是首个在预训练、强化学习与对齐上同时大改的代际模型。OpenAI 称其为「最对齐」的模型：在一项参考 Hugging Face 事件设计的越界测试中，GPT-5.6 Sol 有 48% 的案例超出授权目标，Astra 一次都没有。","n":[["98%","FrontierMath L4"],["99.9%","ARC-AGI-3"]],"tags":["GPT-6","Astra","对齐"],"src":[["OpenAI｜GPT-6 Astra","https://openai.com/zh-Hant/index/gpt-6-astra/"]]},
 {"dt":"2026-09-09","d":"2026.09","era":"agent","cat":"science","t":"OpenAI 发布 Navier-Stokes 证明，并放弃 100 万美元奖金","f":true,"org":"OpenAI","s":"9 月 9 日，OpenAI 公开一个内部模型给出的 Navier-Stokes 有限时间爆破证明，附论文与 Lean 形式化，并声明不会以此申领千禧年数学奖。","x":"证明用 C∞ 外力构造反例，直接挑战「三维 Navier-Stokes 解是否始终光滑」这一千禧年问题。Lean 形式化让任何人都能机器验证，但数学界仍在争论其物理意义与构造的合理性。放弃奖金，是为了避免「AI 抢人类奖项」的伦理争议。","n":[["$100万","放弃的奖金"]],"tags":["数学","千禧年难题","Lean"],"src":[["The Next Web｜OpenAI publishes Navier-Stokes proof","https://thenextweb.com/news/openai-navier-stokes-proof-published-millennium-prize"],["SIAM｜OpenAI's Navier-Stokes Construction","https://www.siam.org/publications/siam-news/articles/openai-s-navier-stokes-construction-what-c-infty-forcing-changes/"]]},
 {"dt":"2026-09-16","d":"2026.09","era":"agent","cat":"science","t":"3.7 万个智能体组成「虚拟生物科技」，发现肺癌候选药","org":"斯坦福等（Science）","s":"研究团队构建由多达 3.7 万个 AI 智能体、向一位「首席科学家」汇报的虚拟生物科技公司，在数周内完成了靶点发现到候选分子的流程。","x":"这是「AI 科学家」第一次以组织化、多智能体协作的方式产出可实验验证的药物候选。它把科研从「一个模型答一个问题」推进到「一个系统跑完一条管线」。","n":[["3.7万","个智能体"]],"tags":["AI科学家","多智能体","药物发现"],"src":[["Nature｜How a team of AIs discovered a promising lung-cancer drug","https://www.nature.com/articles/d41586-026-02954-y"]]},
-{"dt":"2026-10-07","d":"2026.10","era":"agent","cat":"science","t":"OpenAI 上传 722 篇数学论文：372 项成果，平均 3 小时","f":true,"org":"OpenAI","s":"10 月 7 日，OpenAI 在 GitHub 公开 722 篇由未发布内部模型生成的数学手稿，归为 372 个成果族；模型共尝试约 4000 道题，平均每个结果消耗约 3 小时 ChatGPT Pro 级推理算力。发布后 3 篇被撤回、14 篇修订，截至 11 月 17 日仓库为 721 篇 / 373 个成果族。","x":"论文覆盖数论、代数几何、组合、概率、微分几何、理论计算机科学等，许多附带 Lean 形式化（据仓库统计，约 42% 的顶线结果有形式化版本）。数学家 Abhishek Saha 把成果分为四档：绝大多数落在第二、三档（「重大推进」到「出乎意料的突破」），第四档只有一个——编号 003 的「准黎曼猜想」证明。《华尔街日报》称其中结果涉及三个未解千禧年问题。\n需要冷静看待：Lean 徽章覆盖的范围小于外界想象，OpenAI 未公布每题成败与失败计数，分母也不透明；参与 Navier-Stokes 工作的数学家对「是否都经过充分检查」仍有保留。这是一次能力展示与研究数据公开，不是一次完成的同行评审。","n":[["722 → 721","篇手稿"],["372 → 373","成果族"],["~42%","顶线结果 Lean 化"],["~3小时","平均耗时"]],"tags":["数学","AI科学家","Lean"],"src":[["Yahoo Tech｜OpenAI releases 722 AI-generated math papers","https://tech.yahoo.com/ai/chatgpt/articles/openai-releases-722-ai-generated-200630629.html"],["The Next Web｜722 papers from an unreleased model","https://thenextweb.com/news/openai-maths-722-papers-unreleased-model-github"],["科普中国｜722篇论文与准黎曼猜想","https://cloud.kepuchina.cn/h5/detail?id=7507909621242564608"]]},
+{"dt":"2026-10-07","d":"2026.10","era":"agent","cat":"science","t":"OpenAI 上传 722 篇数学论文：372 项成果，平均 3 小时","f":true,"org":"OpenAI","s":"10 月 7 日，OpenAI 在 GitHub 公开 722 篇由未发布内部模型生成的数学手稿，归为 372 个成果族；模型共尝试约 4000 道题，平均每个结果消耗约 3 小时 ChatGPT Pro 级推理算力。发布后 3 篇被撤回、14 篇修订，截至 11 月 17 日仓库为 721 篇 / 373 个成果族。","x":"论文覆盖数论、代数几何、组合、概率、微分几何、理论计算机科学等，许多附带 Lean 形式化（据仓库统计，约 42% 的顶线结果有形式化版本）。数学家 Abhishek Saha 把成果分为四档：绝大多数落在第二、三档（「重大推进」到「出乎意料的突破」），第四档只有一个——编号 003 的「准黎曼猜想」证明。《华尔街日报》称其中结果涉及三个未解千禧年问题。\n需要冷静看待：Lean 徽章覆盖的范围小于外界想象，OpenAI 未公布每题成败与失败计数，分母也不透明；参与 Navier-Stokes 工作的数学家对「是否都经过充分检查」仍有保留。这是一次能力展示与研究数据公开，不是一次完成的同行评审。","n":[["722 → 721","篇手稿"],["372 → 373","成果族"],["~42%","顶线结果 Lean 化"],["~3小时","平均耗时"]],"tags":["数学","AI科学家","Lean"],"src":[["GitHub｜openai/math","https://github.com/openai/math"],["Yahoo Tech｜OpenAI releases 722 AI-generated math papers","https://tech.yahoo.com/ai/chatgpt/articles/openai-releases-722-ai-generated-200630629.html"],["The Next Web｜722 papers from an unreleased model","https://thenextweb.com/news/openai-maths-722-papers-unreleased-model-github"],["科普中国｜722篇论文与准黎曼猜想","https://cloud.kepuchina.cn/h5/detail?id=7507909621242564608"]]},
 {"dt":"2026-10-09","d":"2026.10","era":"agent","cat":"industry","t":"OpenAI 年化收入约 500 亿美元，年底目标 700 亿","org":"OpenAI","s":"据知情人士，OpenAI 9 月底年化收入约 500 亿美元，公司预计年底达到或超过 700 亿美元，主要由 ChatGPT 订阅与 Codex 企业版驱动。","x":"与 2023 年的 16 亿美元相比，这是三年 30 倍的增长。但算力承诺与训练成本同样在膨胀，收入能否覆盖「基建账单」，仍是 IPO 定价的核心问题。","n":[["$500亿","年化收入"],["$700亿","年底目标"]],"tags":["收入","OpenAI","商业化"],"src":[["Bloomberg｜OpenAI Expects $70 Bln Annualized Revenue","https://www.bloomberg.com/news/videos/2026-10-09/openai-expects-70-bln-annualized-revenue-by-end-of-2026-video"]]},
 {"dt":"2026-10-12","d":"2026.10","era":"agent","cat":"model","t":"Meta Muse Wonder：超级智能实验室的首款前沿模型","org":"Meta","s":"Meta 发布 Muse Wonder 与 Muse Wonder Full，这是 Superintelligence Lab 的首批前沿模型，主打复杂任务与超个性化，Arena 首周即排第三。","x":"此前 Meta 的 Muse Spark 只是低延迟轻量模型。Muse Wonder 让 Meta 重新回到前沿牌桌，也验证了 143 亿美元挖人与算力投入的短期产出。","n":[["1511","Arena Elo"]],"tags":["Meta","Muse","前沿"],"src":[["Antara｜Meta luncurkan Muse Wonder","https://www.antaranews.com/berita/5782986/meta-luncurkan-model-ai-kelas-atas-pertama-muse-wonder"]]},
 {"dt":"2026-10-13","d":"2026.10","era":"agent","cat":"model","t":"Gemini 4 Argon：面向日常编程与信息工作","org":"谷歌 DeepMind","s":"Gemini 4 Argon 上线 Gemini App，定位日常编程、信息处理与原型开发，与更高算力的 Carbon 形成双档。","x":"谷歌把旗舰拆成「快而稳」与「深而准」两条线，用价格与延迟区分场景。Argon 在 Arena 上以 1522 分紧随 Carbon，说明「同一代模型的不同档位」已能占据榜单前二。","n":[["1522","Arena Elo"]],"tags":["Gemini 4","编程","产品线"],"src":[["凤凰网科技｜AI 大模型周榜","https://tech.ifeng.com/c/8y5hU1cig7J"]]},
@@ -808,6 +814,48 @@ function filtered(){
   });
 }
 
+/* ---------- idle autoplay ---------- */
+const IDLE_MS=5000, AUTO_SPEED=90; // px/s, past -> present
+let idleTimer=null, autoRaf=null, autoLast=0;
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function canAutoplay(){
+  return !reduceMotion.matches && !document.hidden && !state.current && !$("#about").classList.contains("on");
+}
+function stopAutoplay(){
+  if(autoRaf) cancelAnimationFrame(autoRaf);
+  autoRaf=null; autoLast=0;
+}
+function startAutoplay(){
+  if(autoRaf || !canAutoplay()) return;
+  const max=scroller.scrollWidth-scroller.clientWidth;
+  if(max<=0 || scroller.scrollLeft>=max-1) return;
+  autoLast=0;
+  const tick=(ts)=>{
+    if(!canAutoplay()){ stopAutoplay(); return; }
+    if(!autoLast) autoLast=ts;
+    const dt=Math.min((ts-autoLast)/1000,0.05);
+    autoLast=ts;
+    const maxNow=scroller.scrollWidth-scroller.clientWidth;
+    if(scroller.scrollLeft>=maxNow-1){ stopAutoplay(); return; }
+    scroller.scrollLeft=Math.min(maxNow, scroller.scrollLeft+AUTO_SPEED*dt);
+    autoRaf=requestAnimationFrame(tick);
+  };
+  autoRaf=requestAnimationFrame(tick);
+}
+function resetIdle(){
+  stopAutoplay();
+  clearTimeout(idleTimer);
+  if(canAutoplay()) idleTimer=setTimeout(startAutoplay, IDLE_MS);
+}
+for(const evt of ["pointerdown","wheel","touchstart","keydown","focusin"]){
+  document.addEventListener(evt, resetIdle, {passive:true, capture:true});
+}
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden) stopAutoplay(); else resetIdle();
+});
+if(reduceMotion.addEventListener) reduceMotion.addEventListener("change",()=>reduceMotion.matches?stopAutoplay():resetIdle());
+
 /* ---------- layout / render ---------- */
 let layoutCache={list:[],xs:[],step:0,cardW:0,total:0};
 function render(animate=true){
@@ -826,6 +874,7 @@ function render(animate=true){
     Array.from(minimap.querySelectorAll(".mm-seg")).forEach(n=>n.remove());
     $("#yearHud").textContent="—";
     layoutCache={list:[],xs:[],step,cardW,total};
+    stopAutoplay();
     return;
   }
   $("#empty").classList.remove("on"); mmView.style.display="block";
@@ -897,6 +946,7 @@ function render(animate=true){
   $("#count").innerHTML=`<b>${list.length}</b> / ${EVENTS.length} 个节点`;
   updateMinimap();
   if(state.first){state.first=false;scroller.scrollLeft=0;}
+  resetIdle();
 }
 
 /* ---------- minimap ---------- */
@@ -987,6 +1037,7 @@ document.addEventListener("keydown",e=>{
 /* ---------- drawer ---------- */
 function openEvent(id){
   const e=EVENTS.find(x=>x.id===id); if(!e)return;
+  stopAutoplay();
   state.current=id;
   state.lastFocus=document.activeElement;
   const c=CATS[e.cat]?CATS[e.cat].color:"#8b9cff";
@@ -1057,6 +1108,7 @@ function closeDrawer(){
   clearHash();
   if(state.lastFocus&&state.lastFocus.focus){try{state.lastFocus.focus()}catch(e){}}
   state.lastFocus=null;
+  resetIdle();
 }
 $("#scrim").addEventListener("click",closeDrawer);
 $("#drawerClose").addEventListener("click",closeDrawer);
@@ -1065,10 +1117,10 @@ $("#nextBtn").addEventListener("click",()=>{const l=layoutCache.list,i=l.findInd
 
 /* ---------- about ---------- */
 const about=$("#about");
-$("#aboutBtn").addEventListener("click",()=>about.classList.add("on"));
-$("#closeAbout").addEventListener("click",()=>about.classList.remove("on"));
-about.addEventListener("click",e=>{if(e.target===about)about.classList.remove("on")});
-function closeAbout(){about.classList.remove("on")}
+$("#aboutBtn").addEventListener("click",()=>{stopAutoplay();about.classList.add("on");});
+$("#closeAbout").addEventListener("click",()=>{about.classList.remove("on");resetIdle();});
+about.addEventListener("click",e=>{if(e.target===about){about.classList.remove("on");resetIdle();}});
+function closeAbout(){about.classList.remove("on");resetIdle();}
 
 /* ---------- search / zoom / jump ---------- */
 let qTimer=null;

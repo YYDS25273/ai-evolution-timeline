@@ -165,7 +165,7 @@
  s:"10 月 7 日，OpenAI 在 GitHub 公开 722 篇由未发布内部模型生成的数学手稿，归为 372 个成果族；模型共尝试约 4000 道题，平均每个结果消耗约 3 小时 ChatGPT Pro 级推理算力。发布后 3 篇被撤回、14 篇修订，截至 11 月 17 日仓库为 721 篇 / 373 个成果族。",
  x:"论文覆盖数论、代数几何、组合、概率、微分几何、理论计算机科学等，许多附带 Lean 形式化（据仓库统计，约 42% 的顶线结果有形式化版本）。数学家 Abhishek Saha 把成果分为四档：绝大多数落在第二、三档（「重大推进」到「出乎意料的突破」），第四档只有一个——编号 003 的「准黎曼猜想」证明。《华尔街日报》称其中结果涉及三个未解千禧年问题。\n需要冷静看待：Lean 徽章覆盖的范围小于外界想象，OpenAI 未公布每题成败与失败计数，分母也不透明；参与 Navier-Stokes 工作的数学家对「是否都经过充分检查」仍有保留。这是一次能力展示与研究数据公开，不是一次完成的同行评审。",
  n:[["722 → 721","篇手稿"],["372 → 373","成果族"],["~42%","顶线结果 Lean 化"],["~3小时","平均耗时"]],tags:["数学","AI科学家","Lean"],
- src:[["Yahoo Tech｜OpenAI releases 722 AI-generated math papers","https://tech.yahoo.com/ai/chatgpt/articles/openai-releases-722-ai-generated-200630629.html"],["The Next Web｜722 papers from an unreleased model","https://thenextweb.com/news/openai-maths-722-papers-unreleased-model-github"],["科普中国｜722篇论文与准黎曼猜想","https://cloud.kepuchina.cn/h5/detail?id=7507909621242564608"]]},
+ src:[["GitHub｜openai/math","https://github.com/openai/math"],["Yahoo Tech｜OpenAI releases 722 AI-generated math papers","https://tech.yahoo.com/ai/chatgpt/articles/openai-releases-722-ai-generated-200630629.html"],["The Next Web｜722 papers from an unreleased model","https://thenextweb.com/news/openai-maths-722-papers-unreleased-model-github"],["科普中国｜722篇论文与准黎曼猜想","https://cloud.kepuchina.cn/h5/detail?id=7507909621242564608"]]},
 
 {dt:"2026-10-12",d:"2026.10",era:"agent",cat:"model",t:"Meta Muse Wonder：超级智能实验室的首款前沿模型",org:"Meta",
  s:"Meta 发布 Muse Wonder 与 Muse Wonder Full，这是 Superintelligence Lab 的首批前沿模型，主打复杂任务与超个性化，Arena 首周即排第三。",
