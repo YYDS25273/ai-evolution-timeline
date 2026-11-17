@@ -121,5 +121,49 @@
   ]
  ],
  "auto": true
+},
+{
+ "dt": "2026-11-15",
+ "d": "2026.11.15",
+ "era": "agent",
+ "cat": "science",
+ "t": "Paying Creators for Training Data Can Increase AI Displacement",
+ "org": "arXiv",
+ "s": "Generative AI increasingly competes with creators while using their content as training data. In response, policymakers have called for platforms to compensate creators for training data use and allow opting out. We stud…",
+ "x": "自动收录自 arXiv 最新论文列表（http://arxiv.org/abs/2611.20204v1）。论文尚未经过同行评审或人工事实核查，合并 PR 前请复核摘要、结论与来源。",
+ "tags": [
+  "自动收录",
+  "arXiv",
+  "论文"
+ ],
+ "src": [
+  [
+   "arXiv 摘要",
+   "http://arxiv.org/abs/2611.20204v1"
+  ]
+ ],
+ "auto": true
+},
+{
+ "dt": "2026-11-15",
+ "d": "2026.11.15",
+ "era": "agent",
+ "cat": "science",
+ "t": "Radar Panoptic Transformer: Semantic-Guided Mask Queries for Dynamic Scene Understanding",
+ "org": "arXiv",
+ "s": "Automotive radar provides long-range sensing and direct Doppler velocity measurements, but its sparse and non-uniformly sampled point clouds pose significant challenges for panoptic segmentation. Dynamic objects often yi…",
+ "x": "自动收录自 arXiv 最新论文列表（http://arxiv.org/abs/2611.20203v1）。论文尚未经过同行评审或人工事实核查，合并 PR 前请复核摘要、结论与来源。",
+ "tags": [
+  "自动收录",
+  "arXiv",
+  "论文"
+ ],
+ "src": [
+  [
+   "arXiv 摘要",
+   "http://arxiv.org/abs/2611.20203v1"
+  ]
+ ],
+ "auto": true
 }
 ]
