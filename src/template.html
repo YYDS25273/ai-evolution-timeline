@@ -245,6 +245,11 @@ body::after{
   color:#0b0f1c;background:linear-gradient(180deg,#ffe3b8,var(--c));border-radius:4px;
   padding:2px 5px;white-space:nowrap;
 }
+.auto{
+  font-size:8.5px;letter-spacing:.04em;color:#d9e1ff;
+  border:1px solid rgba(255,255,255,.24);border-radius:999px;
+  background:rgba(255,255,255,.08);padding:1px 6px;white-space:nowrap;
+}
 .card h3{font-size:14.5px;line-height:1.42;font-weight:650;letter-spacing:.1px;color:#f0f3fc;flex:none;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .card p{
@@ -455,6 +460,263 @@ body::after{
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
 }
+/* ================= Liquid Glass · macOS material ================= */
+:root{
+  --bg:#070a16;
+  --bg2:#0b1020;
+  --text:#f4f7ff;
+  --muted:#b3bdd6;
+  --dim:#7d88a4;
+  --accent:#8b9dff;
+  --glass-hi:rgba(255,255,255,.16);
+  --glass-lo:rgba(255,255,255,.045);
+  --glass-edge:rgba(255,255,255,.22);
+  --glass-tint:rgba(13,19,36,.56);
+  --shadow-float:0 24px 60px -30px rgba(0,0,0,.96), 0 2px 12px -6px rgba(0,0,0,.55);
+  --shadow-inner:inset 0 1px 0 rgba(255,255,255,.34), inset 0 -1px 0 rgba(255,255,255,.05);
+  --font:"SF Pro Display","SF Pro Text",-apple-system,BlinkMacSystemFont,"Segoe UI Variable Display","Segoe UI","PingFang SC","Microsoft YaHei UI","Hiragino Sans GB",system-ui,sans-serif;
+  --mono:"SF Mono","Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+}
+body{
+  background:
+    radial-gradient(1200px 800px at 8% -10%, rgba(92,96,230,.42), transparent 62%),
+    radial-gradient(1000px 760px at 92% 2%, rgba(0,190,200,.28), transparent 64%),
+    radial-gradient(1100px 860px at 54% 108%, rgba(255,96,166,.24), transparent 62%),
+    #070a16;
+}
+body::before{
+  content:"";position:fixed;inset:-12%;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(900px 620px at 12% 8%, rgba(102,108,255,.66), transparent 60%),
+    radial-gradient(780px 560px at 88% 4%, rgba(0,210,220,.46), transparent 62%),
+    radial-gradient(900px 720px at 38% 54%, rgba(96,120,255,.30), transparent 64%),
+    radial-gradient(820px 640px at 72% 60%, rgba(255,96,170,.24), transparent 64%),
+    radial-gradient(820px 620px at 52% 106%, rgba(255,96,170,.38), transparent 62%),
+    radial-gradient(600px 480px at 20% 92%, rgba(255,176,92,.24), transparent 64%),
+    linear-gradient(155deg,#080b1a,#060913 55%,#0a0c18);
+  filter:saturate(118%);
+  animation:aurora 34s ease-in-out infinite alternate;
+  transform:scale(1.08);
+}
+@keyframes aurora{
+  0%{transform:scale(1.06) translate3d(-1.2%,-1%,0)}
+  100%{transform:scale(1.14) translate3d(1.2%,1.4%,0)}
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  mix-blend-mode:soft-light;
+}
+::selection{background:rgba(139,157,255,.35);color:#fff}
+
+.topbar{
+  position:relative;
+  margin:10px 12px 0;padding:10px 14px;
+  border:1px solid var(--glass-edge);border-radius:22px;
+  background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.035));
+  -webkit-backdrop-filter:blur(34px) saturate(180%);
+  backdrop-filter:blur(34px) saturate(180%);
+  box-shadow:var(--shadow-float),var(--shadow-inner);
+  overflow:hidden;
+}
+.filterbar{
+  margin:8px 12px 0;padding:8px 14px 9px;
+  border:1px solid rgba(255,255,255,.14);border-radius:18px;
+  background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025));
+  -webkit-backdrop-filter:blur(30px) saturate(170%);
+  backdrop-filter:blur(30px) saturate(170%);
+  box-shadow:0 18px 46px -32px #000,inset 0 1px 0 rgba(255,255,255,.28);
+}
+.logo{
+  width:42px;height:42px;border-radius:14px;color:#fff;
+  background:linear-gradient(145deg,rgba(255,255,255,.34),rgba(139,157,255,.24));
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 26px -12px rgba(139,157,255,.8);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
+}
+.brand h1{letter-spacing:-.01em;font-weight:650}
+.stat b{color:#fff}
+.search input{
+  height:36px;border-radius:999px;border:1px solid rgba(255,255,255,.18);
+  background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  color:var(--text);
+}
+.search input::placeholder{color:#8b96b4}
+.search input:focus{
+  border-color:rgba(255,255,255,.42);
+  box-shadow:0 0 0 3px rgba(139,157,255,.18),inset 0 1px 0 rgba(255,255,255,.3);
+  background:rgba(255,255,255,.09);
+}
+.search kbd{
+  border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.07);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
+}
+.zoom{
+  border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.055);padding:3px;
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
+}
+.zoom button{border-radius:999px;color:var(--muted)}
+.zoom button.on{
+  background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(226,232,255,.86));
+  color:#141829;box-shadow:0 4px 14px -6px rgba(255,255,255,.5),inset 0 1px 0 #fff;
+  font-weight:650;
+}
+.iconbtn{
+  width:36px;height:36px;border-radius:999px;border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22);
+}
+.chip{
+  border-radius:999px;border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14);
+  color:#c3cce2;
+}
+.chip:hover{
+  color:#fff;border-color:rgba(255,255,255,.28);
+  background:rgba(255,255,255,.09);
+}
+.chip.on{
+  background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(222,229,255,.84));
+  color:#121627;border-color:rgba(255,255,255,.5);
+  box-shadow:0 4px 16px -8px rgba(255,255,255,.6),inset 0 1px 0 #fff;
+}
+.axis{
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22) 8%,rgba(150,200,255,.55) 38%,rgba(255,160,210,.42) 68%,rgba(255,210,150,.5) 94%,transparent);
+  box-shadow:0 0 0 1px rgba(255,255,255,.04),0 0 28px rgba(150,180,255,.35);
+}
+.card{
+  --mx:18%;--my:0%;
+  border-radius:22px;
+  background:
+    radial-gradient(280px circle at var(--mx) var(--my),rgba(255,255,255,.24),transparent 62%),
+    linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.04)),
+    rgba(13,19,36,.54);
+  border:1px solid rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(22px) saturate(165%);
+  backdrop-filter:blur(22px) saturate(165%);
+  box-shadow:
+    0 24px 52px -30px rgba(0,0,0,.95),
+    0 2px 10px -4px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.34),
+    inset 0 -1px 0 rgba(255,255,255,.05);
+  transition:transform .34s cubic-bezier(.2,1.2,.35,1),border-color .24s,box-shadow .24s,background .24s;
+}
+.card:hover{
+  border-color:color-mix(in srgb,var(--c) 45%,rgba(255,255,255,.3));
+  box-shadow:
+    0 30px 66px -34px rgba(0,0,0,.98),
+    0 0 0 1px color-mix(in srgb,var(--c) 25%,transparent),
+    0 0 40px -18px var(--c),
+    inset 0 1px 0 rgba(255,255,255,.42);
+  background:
+    radial-gradient(300px circle at var(--mx) var(--my),rgba(255,255,255,.26),transparent 64%),
+    linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.05)),
+    color-mix(in srgb,var(--c) 20%,rgba(16,23,44,.62));
+}
+.card.below:hover{transform:translateY(5px) scale(1.008)}
+.card.featured{
+  background:
+    radial-gradient(260px circle at var(--mx) var(--my),rgba(255,255,255,.22),transparent 62%),
+    linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.045)),
+    color-mix(in srgb,var(--c) 15%,rgba(13,19,36,.56));
+  border-color:color-mix(in srgb,var(--c) 34%,rgba(255,255,255,.22));
+}
+.card.featured:hover{
+  background:
+    radial-gradient(300px circle at var(--mx) var(--my),rgba(255,255,255,.28),transparent 64%),
+    linear-gradient(145deg,rgba(255,255,255,.20),rgba(255,255,255,.06)),
+    color-mix(in srgb,var(--c) 24%,rgba(16,23,44,.64));
+}
+.card h3{color:#f8faff}
+.card p{color:#c3cce4}
+.card .note{color:#aab5d0;background:rgba(255,255,255,.035);border-radius:0 8px 8px 0;padding:6px 8px}
+.tag{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05)}
+.field-tag{color:var(--fc);border-color:color-mix(in srgb,var(--fc) 35%,transparent);background:color-mix(in srgb,var(--fc) 10%,rgba(255,255,255,.03))}
+.pill{background:color-mix(in srgb,var(--c) 12%,rgba(255,255,255,.04))}
+.year{
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  background:rgba(12,18,34,.55);border-color:rgba(255,255,255,.22);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 4px 14px -8px #000;
+}
+.year.era-start{
+  background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(205,216,255,.82));
+  color:#131728;border-color:transparent;
+}
+.year.now{
+  background:linear-gradient(180deg,rgba(255,226,185,.98),rgba(255,172,88,.9));
+  color:#221407;border-color:transparent;
+}
+.yearhud{
+  background:rgba(12,18,34,.52);border-color:rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22);
+}
+.minimap{
+  border-radius:20px;border:1px solid rgba(255,255,255,.2);
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.035));
+  -webkit-backdrop-filter:blur(30px) saturate(180%);
+  backdrop-filter:blur(30px) saturate(180%);
+  box-shadow:0 20px 50px -28px #000,inset 0 1px 0 rgba(255,255,255,.3);
+}
+.hint{color:#8e9ab8;bottom:62px}
+.hint kbd{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.06)}
+.jump button{
+  border-color:rgba(255,255,255,.2);
+  background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.03));
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 12px 30px -20px #000;
+}
+.jump button.primary{
+  background:linear-gradient(180deg,rgba(255,226,185,.98),rgba(255,172,88,.9));
+  color:#221407;border-color:transparent;
+  box-shadow:0 10px 26px -14px rgba(255,172,88,.7),inset 0 1px 0 #fff;
+}
+.drawer{
+  top:10px;right:10px;height:calc(100% - 20px);border-radius:26px;
+  border:1px solid rgba(255,255,255,.22);
+  background:linear-gradient(160deg,rgba(22,30,54,.84),rgba(10,14,28,.88));
+  -webkit-backdrop-filter:blur(38px) saturate(175%);
+  backdrop-filter:blur(38px) saturate(175%);
+  box-shadow:0 40px 90px -40px #000,inset 0 1px 0 rgba(255,255,255,.28);
+}
+.about-panel{
+  border-radius:28px;border:1px solid rgba(255,255,255,.22);
+  background:linear-gradient(160deg,rgba(22,30,54,.86),rgba(10,14,28,.9));
+  -webkit-backdrop-filter:blur(42px) saturate(180%);
+  backdrop-filter:blur(42px) saturate(180%);
+  box-shadow:0 50px 110px -50px #000,inset 0 1px 0 rgba(255,255,255,.3);
+}
+.scrim{background:rgba(4,7,16,.55);backdrop-filter:blur(5px)}
+.empty{color:#aab5d0}
+
+@media (max-width:760px){
+  .topbar{margin:8px 8px 0;padding:9px 10px;border-radius:18px}
+  .filterbar{margin:6px 8px 0;padding:7px 10px;border-radius:14px}
+  .filterbar .frow{gap:7px}
+  .chiprow{
+    -webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 26px),transparent 100%);
+    mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 26px),transparent 100%);
+  }
+  .card .note{display:none}
+  .card p,.card.has-note p,.card:not(.has-note) p{-webkit-line-clamp:3}
+  .drawer{top:8px;right:8px;width:calc(100vw - 16px);height:calc(100% - 16px);border-radius:22px}
+}
+@media (prefers-reduced-motion:reduce){
+  body::before{animation:none}
+  .card{animation:none}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .card,.topbar,.filterbar,.minimap,.drawer,.about-panel,.yearhud{background-color:rgba(13,19,36,.94)}
+}
 </style>
 </head>
 <body>
@@ -464,7 +726,7 @@ body::after{
       <div class="logo">AI</div>
       <div>
         <h1>人工智能发展史 · 时间线</h1>
-        <p>1943 — 2026 · 从神经元到前沿智能体</p>
+        <p><span id="yearRange">1943 — 2026</span> · 从神经元到前沿智能体</p>
       </div>
     </div>
     <div class="stats" id="stats"></div>
@@ -483,6 +745,7 @@ body::after{
   <div class="filterbar">
     <div class="frow"><span class="flabel">时代</span><div class="chiprow" id="eraChips"></div></div>
     <div class="frow"><span class="flabel">类型</span><div class="chiprow" id="catChips"></div><div class="count" id="count"></div></div>
+    <div class="frow"><span class="flabel">领域</span><div class="chiprow" id="fieldChips"></div></div>
   </div>
 
   <main id="stage">
@@ -526,9 +789,10 @@ body::after{
 <div class="about" id="about">
   <div class="about-panel">
     <h2>关于这条时间线</h2>
-    <p class="lede">数据截至 2026 年 11 月 17 日 · 共收录 <b id="aboutCount"></b> 个节点</p>
+    <p class="lede">数据截至 <b id="dataCutoff">2026-11-17</b> · 共收录 <b id="aboutCount"></b> 个节点</p>
     <p><strong>怎么读：</strong>横向为时间顺序轴（从左到右），每个节点等距排布，<strong>并非等比时间轴</strong> —— 否则 2025—2026 的信息密度会把整个上半屏挤成一条线。纵向交替是为了容纳文字，不代表任何数值高低。</p>
     <p><strong>选材标准：</strong>优先收录有明确日期与可核查来源的节点：开创性论文/系统、里程碑模型发布、可量化的产业与科研结果、以及改变规则的政策事件。同一事件的多次传闻、未证实的能力宣称与纯营销口径一律不收；对仅有媒体报道的数字，会标注来源。</p>
+    <p><strong>领域：</strong>数学、物理、化学、生物、医学、神经科学、气候·能源、工程·动力、机器人、计算机、社会·经济、通用·前沿。一条事件可以属于多个领域，筛选按「任一匹配」处理；领域是编辑归类，不是官方学科分类。</p>
     <div class="cols">
       <div>
         <div class="sec-title" style="margin-top:0">覆盖范围</div>
@@ -573,6 +837,20 @@ const CATS = {
   app:     {name:"应用·社会", color:"#a6e37f"},
   safety:  {name:"安全·对齐", color:"#ff7b7b"}
 };
+const FIELDS = {
+  engineering:  {name:"工程·动力", color:"#ffb86b", desc:"发动机、航空航天、制造、机械"},
+  math:         {name:"数学",       color:"#8b9dff", desc:"定理、证明、几何、数论、形式化"},
+  physics:      {name:"物理",       color:"#6fb6ff", desc:"量子、聚变、粒子、材料、天气"},
+  chemistry:    {name:"化学",       color:"#6fe3c4", desc:"分子、催化、材料发现"},
+  biology:      {name:"生物",       color:"#a6e37f", desc:"基因、蛋白、细胞、药物发现"},
+  medicine:     {name:"医学",       color:"#ff9f9f", desc:"临床、诊断、FDA、患者"},
+  neuroscience: {name:"神经科学",   color:"#c4a7ff", desc:"大脑、认知、神经元、脑机接口"},
+  climate:      {name:"气候·能源",  color:"#ffc46b", desc:"天气、电网、聚变、数据中心能耗"},
+  robotics:     {name:"机器人",     color:"#ff8fb8", desc:"具身智能、自动驾驶、人形机器人"},
+  computing:    {name:"计算机",     color:"#9bb0ff", desc:"软件、算法、芯片、算力、模型"},
+  society:      {name:"社会·经济",  color:"#d3b38b", desc:"政策、监管、就业、教育、市场"},
+  general:      {name:"通用·前沿",  color:"#9aa6c4", desc:"跨领域模型、产品与基础事件"}
+};
 const EVENTS = [
 /*__EVENTS__*/
 ];
@@ -589,9 +867,17 @@ const domain = u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch(e){
 const esc = s=>String(s==null?"":s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
 
 const ZOOMS=[{w:252,g:22},{w:300,g:30},{w:352,g:38}];
-const state={q:"",era:"all",cats:new Set(),zoom:1,first:true,current:null};
+const state={q:"",era:"all",cats:new Set(),fields:new Set(),zoom:1,first:true,current:null};
 const scroller=$("#scroller"), track=$("#track"), eventsBox=$("#events"),
       bandsBox=$("#bands"), ticksBox=$("#ticks"), minimap=$("#minimap"), mmView=$("#mmView");
+
+/* pointer-reactive specular highlight on glass cards */
+eventsBox.addEventListener("pointermove",e=>{
+  const card=e.target.closest(".card"); if(!card)return;
+  const r=card.getBoundingClientRect();
+  card.style.setProperty("--mx",((e.clientX-r.left)/r.width*100).toFixed(1)+"%");
+  card.style.setProperty("--my",((e.clientY-r.top)/r.height*100).toFixed(1)+"%");
+},{passive:true});
 
 /* ---------- init chips & stats ---------- */
 (function initChips(){
@@ -609,6 +895,25 @@ const scroller=$("#scroller"), track=$("#track"), eventsBox=$("#events"),
     const b=el("button","chip"); b.dataset.cat=k;
     b.innerHTML=`<span class="dot" style="background:${c.color}"></span>${c.name}`;
     catRow.appendChild(b);
+  });
+  const fieldRow=$("#fieldChips");
+  const allField=el("button","chip on"); allField.dataset.field="all"; allField.textContent="全部领域"; fieldRow.appendChild(allField);
+  Object.entries(FIELDS).forEach(([k,c])=>{
+    const b=el("button","chip"); b.dataset.field=k;
+    b.innerHTML=`<span class="dot" style="background:${c.color}"></span>${c.name}`;
+    b.title=c.desc||c.name;
+    fieldRow.appendChild(b);
+  });
+  fieldRow.addEventListener("click",e=>{
+    const b=e.target.closest(".chip"); if(!b)return;
+    if(b.dataset.field==="all"){state.fields.clear();$$(".chip",fieldRow).forEach((x,i)=>x.classList.toggle("on",i===0));}
+    else{
+      const k=b.dataset.field;
+      if(state.fields.has(k))state.fields.delete(k);else state.fields.add(k);
+      b.classList.toggle("on",state.fields.has(k));
+      $(".chip",fieldRow).classList.toggle("on",state.fields.size===0);
+    }
+    render(false); scroller.scrollLeft=0;
   });
   eraRow.addEventListener("click",e=>{
     const b=e.target.closest(".chip"); if(!b)return;
@@ -639,6 +944,10 @@ const scroller=$("#scroller"), track=$("#track"), eventsBox=$("#events"),
     const d=el("div","stat"); d.innerHTML=`<b>${v}</b><span>${l}</span>`; box.appendChild(d);
   });
   $("#aboutCount").textContent=EVENTS.length;
+  const minYear=EVENTS[0]?.dt?.slice(0,4)||"1943";
+  const maxYear=EVENTS[EVENTS.length-1]?.dt?.slice(0,4)||"2026";
+  $("#yearRange").textContent=`${minYear} — ${maxYear}`;
+  $("#dataCutoff").textContent=EVENTS[EVENTS.length-1]?.dt||"—";
 })();
 
 /* ---------- filtering ---------- */
@@ -647,11 +956,13 @@ function filtered(){
   return EVENTS.filter(e=>{
     if(state.era!=="all" && e.era!==state.era) return false;
     if(state.cats.size && !state.cats.has(e.cat)) return false;
+    if(state.fields.size && !(e.field||[]).some(f=>state.fields.has(f))) return false;
     if(q){
       if(/^\d{4}$/.test(q)){
         if(!e.dt.startsWith(q)) return false;
       }else{
-        const hay=(e.t+" "+e.s+" "+(e.x||"")+" "+e.d+" "+e.tags.join(" ")+" "+(e.org||"")).toLowerCase();
+        const fieldNames=(e.field||[]).map(f=>FIELDS[f]?.name||"").join(" ");
+        const hay=(e.t+" "+e.s+" "+(e.x||"")+" "+e.d+" "+e.tags.join(" ")+" "+(e.org||"")+" "+fieldNames).toLowerCase();
         if(!hay.includes(q)) return false;
       }
     }
@@ -660,7 +971,7 @@ function filtered(){
 }
 
 /* ---------- idle autoplay ---------- */
-const IDLE_MS=5000, AUTO_SPEED=90; // px/s, past -> present
+const IDLE_MS=5000, AUTO_SPEED=45; // px/s, past -> present
 let idleTimer=null, autoRaf=null, autoLast=0;
 const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -708,7 +1019,9 @@ function render(animate=true){
   const {w:cardW,g:gap}=ZOOMS[state.zoom];
   document.documentElement.style.setProperty("--cardW",cardW+"px");
   const step=cardW+gap, padL=72;
-  const total=Math.max(padL+list.length*step+40, scroller.clientWidth+80);
+  const contentW=list.length*step;
+  const total=Math.max(contentW+padL*2, scroller.clientWidth+80);
+  const startX=Math.max(padL,(total-contentW)/2);
   track.style.width=total+"px";
   eventsBox.innerHTML=""; bandsBox.innerHTML=""; ticksBox.innerHTML="";
 
@@ -727,7 +1040,7 @@ function render(animate=true){
   /* bands */
   const eraRanges={};
   list.forEach((e,i)=>{
-    const x=padL+i*step+cardW/2;
+    const x=startX+i*step+cardW/2;
     (eraRanges[e.era] ||= {min:x,max:x});
     eraRanges[e.era].min=Math.min(eraRanges[e.era].min,x);
     eraRanges[e.era].max=Math.max(eraRanges[e.era].max,x);
@@ -747,7 +1060,7 @@ function render(animate=true){
   /* events + ticks + years */
   let lastYear=null, lastEra=null;
   list.forEach((e,i)=>{
-    const x=padL+i*step+cardW/2;
+    const x=startX+i*step+cardW/2;
     const c=CATS[e.cat]?CATS[e.cat].color:"#8b9cff";
     const card=el("article","card "+(i%2?"below":"above")+(e.f?" featured":"")+(e.x?" has-note":""));
     card.dataset.id=e.id;
@@ -755,13 +1068,16 @@ function render(animate=true){
     card.style.setProperty("--c",c);
     card.style.animationDelay=(animate?Math.min(i*9,420):0)+"ms";
     card.tabIndex=0; card.setAttribute("role","button"); card.setAttribute("aria-label",e.d+" "+e.t);
-    const tags=(e.tags||[]).slice(0,2).map(t=>`<span class="tag">${esc(t)}</span>`).join("");
+    const f0=(e.field||[])[0];
+    const fieldTag=f0&&FIELDS[f0]?`<span class="tag field-tag" style="--fc:${FIELDS[f0].color}">${esc(FIELDS[f0].name)}</span>`:"";
+    const tags=fieldTag+(e.tags||[]).slice(0,1).map(t=>`<span class="tag">${esc(t)}</span>`).join("");
     const metric=e.n&&e.n[0]?`<span class="metric">${esc(e.n[0][0])}<small>${esc(e.n[0][1])}</small></span>`:"";
     card.innerHTML=`
       <span class="bar"></span>
       <div class="chead">
         <span class="date">${esc(e.d)}</span>
         <span class="pill">${esc(CATS[e.cat]?CATS[e.cat].name:e.cat)}</span>
+        ${e.auto?'<span class="auto">自动收录</span>':""}
         ${e.f?'<span class="key">KEY</span>':""}
       </div>
       <h3>${esc(e.t)}</h3>
@@ -783,11 +1099,11 @@ function render(animate=true){
   });
 
   /* now cap */
-  const endX=padL+list.length*step;
+  const endX=startX+contentW;
   const now=el("span","year now","NOW");
   now.style.left=(endX+6)+"px"; ticksBox.appendChild(now);
 
-  layoutCache={list,xs:list.map((_,i)=>padL+i*step+cardW/2),step,cardW,total};
+  layoutCache={list,xs:list.map((_,i)=>startX+i*step+cardW/2),step,cardW,total};
   $("#count").innerHTML=`<b>${list.length}</b> / ${EVENTS.length} 个节点`;
   updateMinimap();
   if(state.first){state.first=false;scroller.scrollLeft=0;}
@@ -896,6 +1212,8 @@ function openEvent(id){
   const sub=[];
   if(e.org)sub.push(`<span>${e.org}</span>`);
   sub.push(`<span>${ERAS.find(x=>x.id===e.era).name}</span>`);
+  if(e.field&&e.field.length)sub.push(`<span>${e.field.map(f=>FIELDS[f]?.name).filter(Boolean).join(" · ")}</span>`);
+  if(e.auto)sub.push(`<span>自动收录 · 待复核</span>`);
   if(e.n&&e.n[0])sub.push(`<span style="color:${c}">${e.n[0][0]} ${e.n[0][1]}</span>`);
   $("#dSub").innerHTML=sub.join("");
   const body=$("#dBody"); body.innerHTML="";
@@ -920,6 +1238,7 @@ function openEvent(id){
     body.appendChild(el("div","sec-title","来源与延伸阅读"));
     const list=el("div","srclist");
     e.src.forEach(([label,url])=>{
+      if(!/^https?:\/\//i.test(url)) return;
       const a=el("a"); a.href=url; a.target="_blank"; a.rel="noopener noreferrer";
       a.innerHTML=`<span>${esc(label)}</span><span class="dom">${esc(domain(url))} ↗</span>`;
       list.appendChild(a);

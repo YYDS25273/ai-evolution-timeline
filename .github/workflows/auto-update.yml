@@ -1,0 +1,54 @@
+name: Auto update AI timeline
+
+on:
+  schedule:
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: auto-update-timeline
+  cancel-in-progress: true
+
+jobs:
+  update:
+    if: github.repository == 'YYDS25273/ai-evolution-timeline'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch new entries
+        run: node scripts/auto-update.mjs
+
+      - name: Build and validate
+        run: |
+          node build.mjs
+          node scripts/validate.mjs
+
+      - name: Open or update pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- src/part-auto.js index.html "AI发展史时间线.html"; then
+            echo "No new timeline items."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B auto-update/timeline
+          git add src/part-auto.js index.html "AI发展史时间线.html"
+          git commit -m "chore: auto-update AI timeline"
+          git push -f origin auto-update/timeline
+          gh pr create \
+            --title "chore: auto-update AI timeline" \
+            --body "自动收录了 Hacker News / arXiv 的新条目。请复核事实、措辞与来源后再合并。" \
+            --base main --head auto-update/timeline \
+          || gh pr comment auto-update/timeline --body "自动更新：$(date -u +%F)"

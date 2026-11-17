@@ -2,11 +2,12 @@
   "name": "ai-evolution-timeline",
   "version": "1.0.0",
   "private": true,
-  "description": "1943—2026 人工智能发展史横向时间线：156 个可交互节点",
+  "description": "1943—2026 人工智能发展史横向时间线：158 个精选节点 + 每日自动收录",
   "scripts": {
     "build": "node build.mjs",
     "check": "node scripts/validate.mjs",
-    "build:check": "node build.mjs && node scripts/validate.mjs"
+    "build:check": "node build.mjs && node scripts/validate.mjs",
+    "update": "node scripts/auto-update.mjs"
   },
   "engines": {
     "node": ">=18"

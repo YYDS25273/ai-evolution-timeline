@@ -1,103 +1,440 @@
 [
-{dt:"2023-02-24",d:"2023.02",era:"gen",cat:"model",t:"LLaMA：Meta 把大模型权重交给研究社区",org:"Meta AI",
- s:"Meta 发布 7B–65B 的 LLaMA 系列，仅面向研究者开放；权重很快泄露，直接催生了 Alpaca、Vicuna 等开源微调浪潮。",
- x:"LLaMA 证明小得多的模型在足够多的 token 上训练也能很强。泄露事件让「开源权重」成为无法逆转的事实，也让 Meta 在后续 Llama 2/3 中转向更开放的策略。",
- n:[["7B–65B","参数范围"]],tags:["LLaMA","开源","Meta"],
- src:[["arXiv｜LLaMA: Open and Efficient Foundation Language Models","https://arxiv.org/abs/2302.13971"]]},
-
-{dt:"2023-03-14",d:"2023.03",era:"gen",cat:"model",t:"GPT-4 发布：多模态与「考试型 AI」",f:true,org:"OpenAI",
- s:"GPT-4 支持图像输入，在律师资格考试中进入前 10%，推理与可靠性显著提升，并开启 ChatGPT 的插件生态。",
- x:"GPT-4 是第一个被广泛用于严肃生产环境的大模型。它把「AI 能否通过专业考试」变成公共话题，也暴露了幻觉、时效与安全对齐的短板。此后「前沿模型」有了可比较的基准线。",
- n:[["~90%","律师资格考试百分位"]],tags:["GPT-4","多模态","基准"],
- src:[["OpenAI｜GPT-4","https://openai.com/research/gpt-4"]]},
-
-{dt:"2023-03-14",d:"2023.03",era:"gen",cat:"model",t:"Claude 发布：宪法 AI 与长上下文",org:"Anthropic",
- s:"由 OpenAI 前成员创立的 Anthropic 发布 Claude，用「宪法 AI」以原则约束模型行为，并把长上下文作为差异化能力。",
- x:"Claude 把「有用、诚实、无害」写进训练目标，强调可解释与可控。它后来在代码与长文档任务上建立了口碑，成为企业市场最重要的挑战者。",
- tags:["Claude","宪法AI","Anthropic"],
- src:[["Anthropic｜Introducing Claude","https://www.anthropic.com/news/introducing-claude"]]},
-
-{dt:"2023-07-18",d:"2023.07",era:"gen",cat:"model",t:"Llama 2 免费商用：开源生态正式爆发",org:"Meta / 微软",
- s:"Llama 2 以 7B/13B/70B 三种规格免费开放商用，配套微软 Azure 分发，开源大模型第一次具备完整产业条件。",
- x:"免费商用条款让创业公司可以合法地把大模型嵌入产品，催生了大量垂直模型与本地部署方案。开源与闭源的路线之争由此定型。",
- n:[["免费","商用许可"]],tags:["Llama 2","开源","商用"],
- src:[["Meta｜Llama 2","https://ai.meta.com/llama/"]]},
-
-{dt:"2023-10-30",d:"2023.10",era:"gen",cat:"policy",t:"拜登 AI 行政令：算力阈值与安全测试",org:"美国政府",
- s:"美国首份综合性 AI 行政令要求超大规模模型向政府报告并接受安全测试，首次以算力规模（10^26 FLOP）划定监管对象。",
- x:"行政令覆盖安全、隐私、公平、劳工与国家安全，指示 NIST 制定标准。它没有立法效力，却为后续各州立法与联邦机构行动提供了模板，也引发「监管能否跟上技术」的争论。",
- n:[["10^26","FLOP 阈值"]],tags:["监管","行政令","安全"],
- src:[["Wikipedia｜Executive Order 14110","https://en.wikipedia.org/wiki/Executive_Order_14110"]]},
-
-{dt:"2023-11-17",d:"2023.11",era:"gen",cat:"industry",t:"OpenAI 董事会风波：五天罢免与回归",org:"OpenAI",
- s:"董事会突然罢免 CEO 奥尔特曼，约 95% 员工联名要求其回归，五天后奥尔特曼复职、董事会重组，微软成为关键斡旋方。",
- x:"这场危机暴露了「非营利使命」与「商业化速度」的结构性冲突，也让 AI 治理从技术问题变成公司治理问题。它直接推动了 OpenAI 在 2025 年完成重组。",
- tags:["公司治理","OpenAI","董事会"],
- src:[["Wikipedia｜Removal of Sam Altman from OpenAI","https://en.wikipedia.org/wiki/Removal_of_Sam_Altman_from_OpenAI"]]},
-
-{dt:"2023-12-06",d:"2023.12",era:"gen",cat:"model",t:"Gemini 1.0：原生多模态，一次发布三个尺寸",org:"谷歌 DeepMind",
- s:"谷歌发布 Gemini Ultra / Pro / Nano，从训练起就联合处理文本、图像、音频与视频，Ultra 在 MMLU 上首次超过人类专家水平。",
- x:"Gemini 是谷歌把 DeepMind 与 Google Brain 合并后的第一个旗舰产品，意在回应 GPT-4。它把「原生多模态」确立为前沿模型的标配。",
- n:[["90.0%","MMLU（Ultra）"]],tags:["Gemini","多模态","谷歌"],
- src:[["Google｜Introducing Gemini","https://blog.google/technology/ai/google-gemini-ai/"]]},
-
-{dt:"2023-12-08",d:"2023.12",era:"gen",cat:"policy",t:"欧盟 AI 法案达成政治协议：全球首部全面 AI 立法",f:true,org:"欧盟",
- s:"欧洲议会与成员国就《人工智能法案》达成协议，按风险分级监管，并对通用 AI 模型设专门义务，最高罚款达全球营收 7%。",
- x:"法案把 AI 应用分为不可接受风险、高风险、有限风险与最小风险，禁止社会评分与部分实时生物识别。它成为全球监管的「布鲁塞尔效应」样本，也因合规成本引发产业界反弹。",
- n:[["7%","最高营收罚款"]],tags:["欧盟","AI法案","风险分级"],
- src:[["European Commission｜AI Act","https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"]]},
-
-{dt:"2024-02-15",d:"2024.02",era:"gen",cat:"model",t:"Sora 预览：文本生成 60 秒视频",org:"OpenAI",
- s:"OpenAI 展示 Sora，可根据文本生成最长 60 秒、镜头运动连贯的高清视频，技术报告称之为「世界模拟器」。",
- x:"Sora 用扩散 Transformer 在时空 patch 上建模，展现了物理一致性与镜头语言。它让「视频生成」成为新一轮竞赛焦点，也把深度伪造与内容溯源问题推到台前。",
- n:[["60","秒视频长度"]],tags:["Sora","视频生成","世界模型"],
- src:[["OpenAI｜Video generation models as world simulators","https://openai.com/research/video-generation-models-as-world-simulators"]]},
-
-{dt:"2024-05-13",d:"2024.05",era:"gen",cat:"model",t:"GPT-4o：实时语音、视觉与「人人可用」",f:true,org:"OpenAI",
- s:"GPT-4o 把文本、语音、图像统一到一个模型，语音响应延迟降至约 320 毫秒，并首次向所有用户免费开放旗舰能力。",
- x:"它能被打断、能感知语气、能看屏幕，交互从「打字」变成「对话」。免费策略让 ChatGPT 用户规模再次跃升，也迫使竞争对手全面降价。",
- n:[["~320ms","语音响应延迟"]],tags:["GPT-4o","实时语音","多模态"],
- src:[["OpenAI｜Hello GPT-4o","https://openai.com/index/hello-gpt-4o/"]]},
-
-{dt:"2024-06-20",d:"2024.06",era:"gen",cat:"model",t:"Claude 3.5 Sonnet：编码能力反超，Artifacts 出圈",org:"Anthropic",
- s:"Claude 3.5 Sonnet 在编码与推理基准上超过 GPT-4o，并推出 Artifacts 侧边预览，让生成的内容可直接运行与迭代。",
- x:"它成为许多开发者的首选编码模型，也让 Anthropic 在企业市场站稳。此后「编码 + 智能体」成为 Claude 的核心定位。",
- tags:["Claude","编码","Artifacts"],
- src:[["Anthropic｜Claude 3.5 Sonnet","https://www.anthropic.com/news/claude-3-5-sonnet"]]},
-
-{dt:"2024-07-23",d:"2024.07",era:"gen",cat:"model",t:"Llama 3.1 405B：开源模型首次摸到前沿",org:"Meta",
- s:"Meta 开源 405B 的 Llama 3.1，支持 128K 上下文与工具调用，是当时最大的开放权重模型，性能接近闭源旗舰。",
- x:"它让「开源落后闭源两年」的判断失效，也把模型权重、许可与安全责任推向公共政策讨论。此后中国开源模型（Qwen、DeepSeek、Kimi）沿这条路迅速崛起。",
- n:[["405B","参数"]],tags:["Llama 3.1","开源","前沿"],
- src:[["Meta｜Llama 3.1","https://ai.meta.com/blog/meta-llama-3-1/"]]},
-
-{dt:"2024-08-01",d:"2024.08",era:"gen",cat:"policy",t:"欧盟《AI 法案》正式生效：分阶段落地",org:"欧盟",
- s:"《AI 法案》生效，禁止性条款 2025 年 2 月适用、通用模型义务 2025 年 8 月适用、高风险系统 2026 年 8 月适用。",
- x:"分阶段设计给产业留出适应期，但「通用模型」的定义、训练数据披露与版权豁免始终争议不断。2026 年的「数字综合法案」又对高风险义务做了延期。",
- tags:["欧盟","合规","生效"],
- src:[["European Commission｜AI Act enters into force","https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"]]},
-
-{dt:"2024-09-12",d:"2024.09",era:"gen",cat:"model",t:"o1：让模型「先思考再回答」",f:true,org:"OpenAI",
- s:"o1 用强化学习训练长链思维，在数学与竞赛编程上大幅跃升：AIME 2024 得分 83%，而 GPT-4o 仅约 13%。",
- x:"o1 开启了「推理时计算」这条新缩放轴：不一定要更大的模型，增加思考 token 也能提升能力。它也让「思维链是否应公开」成为安全与竞争的新问题。",
- n:[["83%","AIME 2024"],["13%","GPT-4o 对比"]],tags:["o1","推理","思维链"],
- src:[["OpenAI｜Learning to Reason with LLMs","https://openai.com/index/learning-to-reason-with-llms/"]]},
-
-{dt:"2024-10-08",d:"2024.10",era:"gen",cat:"science",t:"诺贝尔奖连续授予 AI：物理与化学的双重加冕",f:true,org:"诺贝尔奖委员会",
- s:"物理学奖授予霍普菲尔德与辛顿，表彰神经网络的基础发现；化学奖授予贝克、哈萨比斯与江珀，表彰蛋白质设计与结构预测。",
- x:"这是诺奖历史上第一次在同一年的两个科学奖项中如此集中地承认 AI。它标志着 AI 从「工具」变成「科学发现的方法本身」，也引发关于「AI 是否配得上诺奖」的讨论。",
- n:[["2","诺奖领域"]],tags:["诺贝尔奖","辛顿","AlphaFold"],
- src:[["Nobel Prize｜Physics 2024","https://www.nobelprize.org/prizes/physics/2024/summary/"]]},
-
-{dt:"2024-12-11",d:"2024.12",era:"gen",cat:"model",t:"Gemini 2.0：为「智能体时代」设计",org:"谷歌 DeepMind",
- s:"Gemini 2.0 Flash 发布，原生支持工具调用、实时多模态与多智能体协作，谷歌明确把「Agent」定为下一代产品形态。",
- x:"Gemini 2.0 与 Project Astra、Mariner 一起展示了能看屏幕、能操作浏览器、能连续执行任务的助手。它把行业叙事从「聊天」推向「替你做事」。",
- tags:["Gemini 2.0","智能体","多模态"],
- src:[["Google｜Introducing Gemini 2.0","https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/"]]},
-
-{dt:"2024-12-20",d:"2024.12",era:"gen",cat:"model",t:"o3 预告：ARC-AGI 87.5%，推理 scaling 继续",org:"OpenAI",
- s:"OpenAI 在「12 天」直播最后一天公布 o3，ARC-AGI 得分 87.5%（o1 为 32%），FrontierMath 达 25.2%，但单次高算力成本惊人。",
- x:"o3 证明了「更多思考时间」还能换来能力，也把评测推入「成本—性能」二维比较。它在 SWE-bench 与竞赛编程上同样大幅领先，直接为 2025 年的智能体竞赛定调。",
- n:[["87.5%","ARC-AGI"]],tags:["o3","ARC-AGI","推理"],
- src:[["OpenAI｜OpenAI o3 and o3-mini","https://openai.com/index/openai-o3-mini/"]]}
+ {
+  "dt": "2023-02-24",
+  "d": "2023.02",
+  "era": "gen",
+  "cat": "model",
+  "t": "LLaMA：Meta 把大模型权重交给研究社区",
+  "org": "Meta AI",
+  "s": "Meta 发布 7B–65B 的 LLaMA 系列，仅面向研究者开放；权重很快泄露，直接催生了 Alpaca、Vicuna 等开源微调浪潮。",
+  "x": "LLaMA 证明小得多的模型在足够多的 token 上训练也能很强。泄露事件让「开源权重」成为无法逆转的事实，也让 Meta 在后续 Llama 2/3 中转向更开放的策略。",
+  "n": [
+   [
+    "7B–65B",
+    "参数范围"
+   ]
+  ],
+  "tags": [
+   "LLaMA",
+   "开源",
+   "Meta"
+  ],
+  "src": [
+   [
+    "arXiv｜LLaMA: Open and Efficient Foundation Language Models",
+    "https://arxiv.org/abs/2302.13971"
+   ]
+  ]
+ },
+ {
+  "dt": "2023-03-14",
+  "d": "2023.03",
+  "era": "gen",
+  "cat": "model",
+  "t": "GPT-4 发布：多模态与「考试型 AI」",
+  "f": true,
+  "org": "OpenAI",
+  "s": "GPT-4 支持图像输入，在律师资格考试中进入前 10%，推理与可靠性显著提升，并开启 ChatGPT 的插件生态。",
+  "x": "GPT-4 是第一个被广泛用于严肃生产环境的大模型。它把「AI 能否通过专业考试」变成公共话题，也暴露了幻觉、时效与安全对齐的短板。此后「前沿模型」有了可比较的基准线。",
+  "n": [
+   [
+    "~90%",
+    "律师资格考试百分位"
+   ]
+  ],
+  "tags": [
+   "GPT-4",
+   "多模态",
+   "基准"
+  ],
+  "src": [
+   [
+    "OpenAI｜GPT-4",
+    "https://openai.com/research/gpt-4"
+   ]
+  ]
+ },
+ {
+  "dt": "2023-03-14",
+  "d": "2023.03",
+  "era": "gen",
+  "cat": "model",
+  "t": "Claude 发布：宪法 AI 与长上下文",
+  "org": "Anthropic",
+  "s": "由 OpenAI 前成员创立的 Anthropic 发布 Claude，用「宪法 AI」以原则约束模型行为，并把长上下文作为差异化能力。",
+  "x": "Claude 把「有用、诚实、无害」写进训练目标，强调可解释与可控。它后来在代码与长文档任务上建立了口碑，成为企业市场最重要的挑战者。",
+  "tags": [
+   "Claude",
+   "宪法AI",
+   "Anthropic"
+  ],
+  "src": [
+   [
+    "Anthropic｜Introducing Claude",
+    "https://www.anthropic.com/news/introducing-claude"
+   ]
+  ]
+ },
+ {
+  "dt": "2023-07-18",
+  "d": "2023.07",
+  "era": "gen",
+  "cat": "model",
+  "t": "Llama 2 免费商用：开源生态正式爆发",
+  "org": "Meta / 微软",
+  "s": "Llama 2 以 7B/13B/70B 三种规格免费开放商用，配套微软 Azure 分发，开源大模型第一次具备完整产业条件。",
+  "x": "免费商用条款让创业公司可以合法地把大模型嵌入产品，催生了大量垂直模型与本地部署方案。开源与闭源的路线之争由此定型。",
+  "n": [
+   [
+    "免费",
+    "商用许可"
+   ]
+  ],
+  "tags": [
+   "Llama 2",
+   "开源",
+   "商用"
+  ],
+  "src": [
+   [
+    "Meta｜Llama 2",
+    "https://ai.meta.com/llama/"
+   ]
+  ]
+ },
+ {
+  "dt": "2023-10-30",
+  "d": "2023.10",
+  "era": "gen",
+  "cat": "policy",
+  "t": "拜登 AI 行政令：算力阈值与安全测试",
+  "org": "美国政府",
+  "s": "美国首份综合性 AI 行政令要求超大规模模型向政府报告并接受安全测试，首次以算力规模（10^26 FLOP）划定监管对象。",
+  "x": "行政令覆盖安全、隐私、公平、劳工与国家安全，指示 NIST 制定标准。它没有立法效力，却为后续各州立法与联邦机构行动提供了模板，也引发「监管能否跟上技术」的争论。",
+  "n": [
+   [
+    "10^26",
+    "FLOP 阈值"
+   ]
+  ],
+  "tags": [
+   "监管",
+   "行政令",
+   "安全"
+  ],
+  "src": [
+   [
+    "Wikipedia｜Executive Order 14110",
+    "https://en.wikipedia.org/wiki/Executive_Order_14110"
+   ]
+  ]
+ },
+ {
+  "dt": "2023-11-17",
+  "d": "2023.11",
+  "era": "gen",
+  "cat": "industry",
+  "t": "OpenAI 董事会风波：五天罢免与回归",
+  "org": "OpenAI",
+  "s": "董事会突然罢免 CEO 奥尔特曼，约 95% 员工联名要求其回归，五天后奥尔特曼复职、董事会重组，微软成为关键斡旋方。",
+  "x": "这场危机暴露了「非营利使命」与「商业化速度」的结构性冲突，也让 AI 治理从技术问题变成公司治理问题。它直接推动了 OpenAI 在 2025 年完成重组。",
+  "tags": [
+   "公司治理",
+   "OpenAI",
+   "董事会"
+  ],
+  "src": [
+   [
+    "Wikipedia｜Removal of Sam Altman from OpenAI",
+    "https://en.wikipedia.org/wiki/Removal_of_Sam_Altman_from_OpenAI"
+   ]
+  ]
+ },
+ {
+  "dt": "2023-12-06",
+  "d": "2023.12",
+  "era": "gen",
+  "cat": "model",
+  "t": "Gemini 1.0：原生多模态，一次发布三个尺寸",
+  "org": "谷歌 DeepMind",
+  "s": "谷歌发布 Gemini Ultra / Pro / Nano，从训练起就联合处理文本、图像、音频与视频，Ultra 在 MMLU 上首次超过人类专家水平。",
+  "x": "Gemini 是谷歌把 DeepMind 与 Google Brain 合并后的第一个旗舰产品，意在回应 GPT-4。它把「原生多模态」确立为前沿模型的标配。",
+  "n": [
+   [
+    "90.0%",
+    "MMLU（Ultra）"
+   ]
+  ],
+  "tags": [
+   "Gemini",
+   "多模态",
+   "谷歌"
+  ],
+  "src": [
+   [
+    "Google｜Introducing Gemini",
+    "https://blog.google/technology/ai/google-gemini-ai/"
+   ]
+  ]
+ },
+ {
+  "dt": "2023-12-08",
+  "d": "2023.12",
+  "era": "gen",
+  "cat": "policy",
+  "t": "欧盟 AI 法案达成政治协议：全球首部全面 AI 立法",
+  "f": true,
+  "org": "欧盟",
+  "s": "欧洲议会与成员国就《人工智能法案》达成协议，按风险分级监管，并对通用 AI 模型设专门义务，最高罚款达全球营收 7%。",
+  "x": "法案把 AI 应用分为不可接受风险、高风险、有限风险与最小风险，禁止社会评分与部分实时生物识别。它成为全球监管的「布鲁塞尔效应」样本，也因合规成本引发产业界反弹。",
+  "n": [
+   [
+    "7%",
+    "最高营收罚款"
+   ]
+  ],
+  "tags": [
+   "欧盟",
+   "AI法案",
+   "风险分级"
+  ],
+  "src": [
+   [
+    "European Commission｜AI Act",
+    "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+   ]
+  ]
+ },
+ {
+  "dt": "2024-02-15",
+  "d": "2024.02",
+  "era": "gen",
+  "cat": "model",
+  "t": "Sora 预览：文本生成 60 秒视频",
+  "org": "OpenAI",
+  "s": "OpenAI 展示 Sora，可根据文本生成最长 60 秒、镜头运动连贯的高清视频，技术报告称之为「世界模拟器」。",
+  "x": "Sora 用扩散 Transformer 在时空 patch 上建模，展现了物理一致性与镜头语言。它让「视频生成」成为新一轮竞赛焦点，也把深度伪造与内容溯源问题推到台前。",
+  "n": [
+   [
+    "60",
+    "秒视频长度"
+   ]
+  ],
+  "tags": [
+   "Sora",
+   "视频生成",
+   "世界模型"
+  ],
+  "src": [
+   [
+    "OpenAI｜Video generation models as world simulators",
+    "https://openai.com/research/video-generation-models-as-world-simulators"
+   ]
+  ]
+ },
+ {
+  "dt": "2024-05-13",
+  "d": "2024.05",
+  "era": "gen",
+  "cat": "model",
+  "t": "GPT-4o：实时语音、视觉与「人人可用」",
+  "f": true,
+  "org": "OpenAI",
+  "s": "GPT-4o 把文本、语音、图像统一到一个模型，语音响应延迟降至约 320 毫秒，并首次向所有用户免费开放旗舰能力。",
+  "x": "它能被打断、能感知语气、能看屏幕，交互从「打字」变成「对话」。免费策略让 ChatGPT 用户规模再次跃升，也迫使竞争对手全面降价。",
+  "n": [
+   [
+    "~320ms",
+    "语音响应延迟"
+   ]
+  ],
+  "tags": [
+   "GPT-4o",
+   "实时语音",
+   "多模态"
+  ],
+  "src": [
+   [
+    "OpenAI｜Hello GPT-4o",
+    "https://openai.com/index/hello-gpt-4o/"
+   ]
+  ]
+ },
+ {
+  "dt": "2024-06-20",
+  "d": "2024.06",
+  "era": "gen",
+  "cat": "model",
+  "t": "Claude 3.5 Sonnet：编码能力反超，Artifacts 出圈",
+  "org": "Anthropic",
+  "s": "Claude 3.5 Sonnet 在编码与推理基准上超过 GPT-4o，并推出 Artifacts 侧边预览，让生成的内容可直接运行与迭代。",
+  "x": "它成为许多开发者的首选编码模型，也让 Anthropic 在企业市场站稳。此后「编码 + 智能体」成为 Claude 的核心定位。",
+  "tags": [
+   "Claude",
+   "编码",
+   "Artifacts"
+  ],
+  "src": [
+   [
+    "Anthropic｜Claude 3.5 Sonnet",
+    "https://www.anthropic.com/news/claude-3-5-sonnet"
+   ]
+  ]
+ },
+ {
+  "dt": "2024-07-23",
+  "d": "2024.07",
+  "era": "gen",
+  "cat": "model",
+  "t": "Llama 3.1 405B：开源模型首次摸到前沿",
+  "org": "Meta",
+  "s": "Meta 开源 405B 的 Llama 3.1，支持 128K 上下文与工具调用，是当时最大的开放权重模型，性能接近闭源旗舰。",
+  "x": "它让「开源落后闭源两年」的判断失效，也把模型权重、许可与安全责任推向公共政策讨论。此后中国开源模型（Qwen、DeepSeek、Kimi）沿这条路迅速崛起。",
+  "n": [
+   [
+    "405B",
+    "参数"
+   ]
+  ],
+  "tags": [
+   "Llama 3.1",
+   "开源",
+   "前沿"
+  ],
+  "src": [
+   [
+    "Meta｜Llama 3.1",
+    "https://ai.meta.com/blog/meta-llama-3-1/"
+   ]
+  ]
+ },
+ {
+  "dt": "2024-08-01",
+  "d": "2024.08",
+  "era": "gen",
+  "cat": "policy",
+  "t": "欧盟《AI 法案》正式生效：分阶段落地",
+  "org": "欧盟",
+  "s": "《AI 法案》生效，禁止性条款 2025 年 2 月适用、通用模型义务 2025 年 8 月适用、高风险系统 2026 年 8 月适用。",
+  "x": "分阶段设计给产业留出适应期，但「通用模型」的定义、训练数据披露与版权豁免始终争议不断。2026 年的「数字综合法案」又对高风险义务做了延期。",
+  "tags": [
+   "欧盟",
+   "合规",
+   "生效"
+  ],
+  "src": [
+   [
+    "European Commission｜AI Act enters into force",
+    "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+   ]
+  ]
+ },
+ {
+  "dt": "2024-09-12",
+  "d": "2024.09",
+  "era": "gen",
+  "cat": "model",
+  "t": "o1：让模型「先思考再回答」",
+  "f": true,
+  "org": "OpenAI",
+  "s": "o1 用强化学习训练长链思维，在数学与竞赛编程上大幅跃升：AIME 2024 得分 83%，而 GPT-4o 仅约 13%。",
+  "x": "o1 开启了「推理时计算」这条新缩放轴：不一定要更大的模型，增加思考 token 也能提升能力。它也让「思维链是否应公开」成为安全与竞争的新问题。",
+  "n": [
+   [
+    "83%",
+    "AIME 2024"
+   ],
+   [
+    "13%",
+    "GPT-4o 对比"
+   ]
+  ],
+  "tags": [
+   "o1",
+   "推理",
+   "思维链"
+  ],
+  "src": [
+   [
+    "OpenAI｜Learning to Reason with LLMs",
+    "https://openai.com/index/learning-to-reason-with-llms/"
+   ]
+  ]
+ },
+ {
+  "dt": "2024-10-08",
+  "d": "2024.10",
+  "era": "gen",
+  "cat": "science",
+  "t": "诺贝尔奖连续授予 AI：物理与化学的双重加冕",
+  "f": true,
+  "org": "诺贝尔奖委员会",
+  "s": "物理学奖授予霍普菲尔德与辛顿，表彰神经网络的基础发现；化学奖授予贝克、哈萨比斯与江珀，表彰蛋白质设计与结构预测。",
+  "x": "这是诺奖历史上第一次在同一年的两个科学奖项中如此集中地承认 AI。它标志着 AI 从「工具」变成「科学发现的方法本身」，也引发关于「AI 是否配得上诺奖」的讨论。",
+  "n": [
+   [
+    "2",
+    "诺奖领域"
+   ]
+  ],
+  "tags": [
+   "诺贝尔奖",
+   "辛顿",
+   "AlphaFold"
+  ],
+  "src": [
+   [
+    "Nobel Prize｜Physics 2024",
+    "https://www.nobelprize.org/prizes/physics/2024/summary/"
+   ]
+  ]
+ },
+ {
+  "dt": "2024-12-11",
+  "d": "2024.12",
+  "era": "gen",
+  "cat": "model",
+  "t": "Gemini 2.0：为「智能体时代」设计",
+  "org": "谷歌 DeepMind",
+  "s": "Gemini 2.0 Flash 发布，原生支持工具调用、实时多模态与多智能体协作，谷歌明确把「Agent」定为下一代产品形态。",
+  "x": "Gemini 2.0 与 Project Astra、Mariner 一起展示了能看屏幕、能操作浏览器、能连续执行任务的助手。它把行业叙事从「聊天」推向「替你做事」。",
+  "tags": [
+   "Gemini 2.0",
+   "智能体",
+   "多模态"
+  ],
+  "src": [
+   [
+    "Google｜Introducing Gemini 2.0",
+    "https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/"
+   ]
+  ]
+ },
+ {
+  "dt": "2024-12-20",
+  "d": "2024.12",
+  "era": "gen",
+  "cat": "model",
+  "t": "o3 预告：ARC-AGI 87.5%，推理 scaling 继续",
+  "org": "OpenAI",
+  "s": "OpenAI 在「12 天」直播最后一天公布 o3，ARC-AGI 得分 87.5%（o1 为 32%），FrontierMath 达 25.2%，但单次高算力成本惊人。",
+  "x": "o3 证明了「更多思考时间」还能换来能力，也把评测推入「成本—性能」二维比较。它在 SWE-bench 与竞赛编程上同样大幅领先，直接为 2025 年的智能体竞赛定调。",
+  "n": [
+   [
+    "87.5%",
+    "ARC-AGI"
+   ]
+  ],
+  "tags": [
+   "o3",
+   "ARC-AGI",
+   "推理"
+  ],
+  "src": [
+   [
+    "OpenAI｜OpenAI o3 and o3-mini",
+    "https://openai.com/index/openai-o3-mini/"
+   ]
+  ]
+ }
 ]
