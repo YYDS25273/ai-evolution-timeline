@@ -165,5 +165,49 @@
   ]
  ],
  "auto": true
+},
+{
+ "dt": "2026-11-25",
+ "d": "2026.11.25",
+ "era": "agent",
+ "cat": "science",
+ "t": "Spectrum Adaptation of AI-Native Autoencoder Communications with Transfer Learning",
+ "org": "arXiv",
+ "s": "End-to-end physical-layer learning replaces separate modulation, coding, and detection operations with an autoencoder (AE) that consists of a jointly trained encoder-decoder pair at the transmitter and the receiver. This…",
+ "x": "自动收录自 arXiv 最新论文列表（http://arxiv.org/abs/2611.34942v1）。论文尚未经过同行评审或人工事实核查，合并 PR 前请复核摘要、结论与来源。",
+ "tags": [
+  "自动收录",
+  "arXiv",
+  "论文"
+ ],
+ "src": [
+  [
+   "arXiv 摘要",
+   "http://arxiv.org/abs/2611.34942v1"
+  ]
+ ],
+ "auto": true
+},
+{
+ "dt": "2026-11-25",
+ "d": "2026.11.25",
+ "era": "agent",
+ "cat": "science",
+ "t": "Can image generation help visual reasoning? An empirical study",
+ "org": "arXiv",
+ "s": "Language models think in words; then multimodal models might think in images. We test whether a generated helper improves the answer to a visual question. A model describes the helper it needs and then answers using the …",
+ "x": "自动收录自 arXiv 最新论文列表（http://arxiv.org/abs/2611.34935v1）。论文尚未经过同行评审或人工事实核查，合并 PR 前请复核摘要、结论与来源。",
+ "tags": [
+  "自动收录",
+  "arXiv",
+  "论文"
+ ],
+ "src": [
+  [
+   "arXiv 摘要",
+   "http://arxiv.org/abs/2611.34935v1"
+  ]
+ ],
+ "auto": true
 }
 ]
